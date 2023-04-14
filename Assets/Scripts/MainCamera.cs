@@ -1,11 +1,12 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class MainCamera : MonoBehaviour
+public class MainCamera : Singleton<MainCamera>
 {
 	private Vector2 direction;
 
 	[SerializeField] private Transform cameraPivot;
+	[SerializeField] private Camera cameraComponent;
 	[SerializeField] private float cameraSensitivity;
 	[SerializeField] private float leftLimit;
 	[SerializeField] private float upLimit;
@@ -19,6 +20,8 @@ public class MainCamera : MonoBehaviour
 		if (nextCameraPosition.x > leftLimit && nextCameraPosition.x < rightLimit && nextCameraPosition.z < upLimit && nextCameraPosition.z > downLimit) 
 			cameraPivot.transform.position = nextCameraPosition;
 	}
+
+	public Camera GetCamera => cameraComponent;
 
 	public void MoveCamera(InputAction.CallbackContext context)
 	{
