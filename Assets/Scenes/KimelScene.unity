@@ -5054,6 +5054,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cash: 0
+  transporters: []
+  vehicles: []
 --- !u!1 &1200557602
 GameObject:
   m_ObjectHideFlags: 0
@@ -7577,7 +7579,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraPivot: {fileID: 427853786}
   cameraComponent: {fileID: 2147475695}
-  cameraSensitivity: 0.4
+  cameraSensitivity: 0.5
   leftLimit: 400
   upLimit: 70
   rightLimit: 600

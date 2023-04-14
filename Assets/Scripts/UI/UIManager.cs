@@ -14,7 +14,7 @@ public class UIManager : Singleton<UIManager>
 	
 	public float Cash
 	{
-		set => cashText.text = $"${value:0.##}";
+		set => cashText.text = $"{value:0.00}zł";
 	}
 
 	public float Heat
