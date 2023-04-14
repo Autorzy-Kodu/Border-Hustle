@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class Contract
 {
-	private float time;
-	private float payment;
+	public string description;
+	public float time;
+	public float payment;
+
+	public void GenerateRandom()
+	{
+		description = "Lorem ipsum";
+		// TODO na jakiej zasadzie powinny generować się nowe losowe kontrakty?
+	}
 }

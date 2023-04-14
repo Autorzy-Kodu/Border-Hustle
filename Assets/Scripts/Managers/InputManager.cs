@@ -10,7 +10,8 @@ public class InputManager : Singleton<InputManager>
 
 	public void MousePosition (InputAction.CallbackContext context) {
 		mousePosition = context.ReadValue<Vector2>();
-		Debug.DrawRay(MainCamera.Instance.GetCamera.ScreenToWorldPoint (mousePosition), MainCamera.Instance.GetCamera.transform.forward * 100f, Color.blue, 1f);
+		Debug.DrawRay(MainCamera.Instance.GetCamera.ScreenPointToRay(mousePosition).origin,
+			MainCamera.Instance.GetCamera.ScreenPointToRay(mousePosition).direction * 100f, Color.blue, 1f);
 	}
 	
 	public void MouseClick(InputAction.CallbackContext context)
@@ -19,14 +20,11 @@ public class InputManager : Singleton<InputManager>
 			return;
 		
 		// FIXME ScreenToWorldPoint nie działa, raycast jest zawsze ze środka kamery
-		if (Physics.Raycast(MainCamera.Instance.GetCamera.ScreenToWorldPoint(mousePosition),
-			    MainCamera.Instance.GetCamera.transform.forward, out RaycastHit rHit, 100f))
+		if (Physics.Raycast(MainCamera.Instance.GetCamera.ScreenPointToRay(mousePosition), out RaycastHit rHit, 500f))
 		{
-			Debug.DrawRay(MainCamera.Instance.GetCamera.ScreenToWorldPoint(mousePosition),
-				MainCamera.Instance.GetCamera.transform.forward * 100f, Color.red, 1f);
+			Debug.DrawRay(MainCamera.Instance.GetCamera.ScreenPointToRay(mousePosition).origin,
+				MainCamera.Instance.GetCamera.ScreenPointToRay(mousePosition).direction * 100f, Color.red, 1f);
 			rHit.collider.GetComponent<ISelectable>()?.Select();
 		}
-
-
 	}
 }
