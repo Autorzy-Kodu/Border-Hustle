@@ -6,6 +6,24 @@
             "id": "18889ffd-dba2-4422-9505-3e616a1438eb",
             "actions": [
                 {
+                    "name": "MousePosition",
+                    "type": "Value",
+                    "id": "ae08900d-df9a-4adf-8ef0-c0e2898e2841",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "MouseClick",
+                    "type": "Button",
+                    "id": "f4554981-0cf2-4f9d-a236-7ee12592863b",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "MoveCamera",
                     "type": "Value",
                     "id": "d241b063-c4e5-4a95-a7cb-794da7886020",
@@ -16,6 +34,28 @@
                 }
             ],
             "bindings": [
+                {
+                    "name": "",
+                    "id": "db4c24c7-95c3-4725-ad46-d8f4935620e3",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MousePosition",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1d24cbce-3f61-4ad2-9910-070f2fdf5382",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MouseClick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
                 {
                     "name": "2D Vector",
                     "id": "a52a323b-e8fc-4a0e-afad-bb9e2939494f",
