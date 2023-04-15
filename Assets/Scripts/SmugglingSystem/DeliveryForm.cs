@@ -76,7 +76,10 @@ public class DeliveryForm : Window
 		IllegalTransport illegalTransport = new IllegalTransport();
 		
 		// TODO skompletuj transport
+		illegalTransport.vehicle = new Vehicle();
+		illegalTransport.vehicle.speed = 1f;
 		
 		Map.Instance.roads[roadDropdown.value].SmuggleUsingThisRoad(GameData.Instance.vehiclesData.vehicles[vehicleDropdown.value].prefab, illegalTransport);
+		Hide();
 	}
 }

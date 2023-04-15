@@ -10,18 +10,7 @@ public class Road : MonoBehaviour
 	public Sprite sprite;
 	[SerializeField] private GameObject dummyCarPrefab;
 	[SerializeField] private List<Waypoint> waypoints;
-
-	private void Start()
-	{
-		// TODO debug only
-		IllegalTransport illegalTransport = new IllegalTransport();
-		Vehicle vehicle = new Vehicle();
-		vehicle.speed = 5f;
-		illegalTransport.vehicle = vehicle;
-		SmuggleUsingThisRoad(dummyCarPrefab, illegalTransport);
-	}
-
-	// TODO zamiast vehicle jakaś klasa transportu na którą składa się przemytnik, ładunek, pojazd i tak dalej
+	
 	public void SmuggleUsingThisRoad(GameObject vehiclePrefab, IllegalTransport illegalTransport)
 	{
 		StartCoroutine(EDriving(vehiclePrefab, illegalTransport));
