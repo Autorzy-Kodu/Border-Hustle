@@ -10,6 +10,12 @@ public class Building : MonoBehaviour, ISelectable
 	public void Select()
 	{
 		Debug.Log("Building selected");
+		if (!windowToShow)
+		{
+			Debug.LogWarning("WindowToShow not set for that building!");
+			return;
+		}
+
 		windowToShow.Show();
 	}
 
