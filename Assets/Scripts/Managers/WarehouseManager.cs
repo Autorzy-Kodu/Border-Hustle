@@ -6,20 +6,20 @@ using UnityEngine.InputSystem;
 public class WarehouseManager : Singleton<WarehouseManager>
 {
     Dictionary<string, int> warehouse = new Dictionary<string, int>();
-
+    int warehouseCapacity=50;
     public void AddGoods(string good,int value)
     {
-        if (warehouse.ContainsKey(good))
+        if (!warehouse.ContainsKey(good))
         {
-            warehouse[good] += value;
-            Debug.Log("Added: " + value + " " + good);
+            warehouse.Add(good, 0);
         }
-        else
+        warehouse[good] += value;
+        if (warehouse[good] > warehouseCapacity)
         {
-            warehouse.Add(good, value);
+            warehouse[good] = warehouseCapacity;
             Debug.Log("Added: " + value + " " + good);
-        }
-        Debug.Log("W magazynie: "+warehouse[good]);
+        }       
+        Debug.Log("W magazynie: " + warehouse[good]);
     }
     public void TakeGoods(string good, int value)
     {
@@ -32,5 +32,13 @@ public class WarehouseManager : Singleton<WarehouseManager>
     public Dictionary<string, int> GetGoods()
     {
             return warehouse;
+    }
+    public void SetWarehouseCapacity(int value)
+    {
+        warehouseCapacity = value;
+    }
+    public int GetWarehouseCapacity()
+    {
+        return warehouseCapacity;
     }
 }

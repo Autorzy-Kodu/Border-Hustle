@@ -25,4 +25,15 @@ public class InputManager : Singleton<InputManager>
         if (Physics.Raycast(MainCamera.Instance.GetCamera.ScreenPointToRay(mousePosition), out RaycastHit rHit2, 500f))
             rHit2.collider.GetComponent<IClickable>()?.Click();
     }
-}
+	public void RightMouseClick(InputAction.CallbackContext context)
+	{
+        if (!allowSceneMouseClicks)
+            return;
+
+        if (!context.performed)
+            return;
+
+        if (Physics.Raycast(MainCamera.Instance.GetCamera.ScreenPointToRay(mousePosition), out RaycastHit rHit2, 500f))
+            rHit2.collider.GetComponent<IClickable>()?.RightClick();
+    }
+    }

@@ -11,6 +11,8 @@ public class Factory : MonoBehaviour, IClickable
 	private Transform textPosition;
 	[SerializeField]
 	private Image icon;
+    [SerializeField] 
+    private Window windowToShow;
 
     Vector3 textStartPosition;
 	float disapearTimer=1f;
@@ -29,19 +31,44 @@ public class Factory : MonoBehaviour, IClickable
     }
 	public void Click()
 	{
-		textPosition.position = textStartPosition;
-		textColor.a = 1;
-        iconColor.a = 1;
-        valueOnUi.color = textColor;
-		icon.color = iconColor;
-        valueOfGoods = Random.Range(0, 100);
-		valueOnUi.text = valueOfGoods.ToString();
-		Good good = GameData.Instance.goodsData.goods[Random.Range(
-			0, GameData.Instance.goodsData.goods.Count)];
+        Good good = GameData.Instance.goodsData.goods[Random.Range(
+            0, GameData.Instance.goodsData.goods.Count)];
         randomGoodName = good.goodName;
-		icon.sprite = good.goodThumbnail;
-        StartCoroutine(FlyText());
-        WarehouseManager.Instance.AddGoods(randomGoodName, valueOfGoods);
+		if (WarehouseManager.Instance.GetGoods().ContainsKey(randomGoodName) && WarehouseManager.Instance.GetGoods()[good.goodName] >= WarehouseManager.Instance.GetWarehouseCapacity())
+		{
+            textColor.a = 1;
+            iconColor.a = 1;
+            textPosition.position = textStartPosition;
+            valueOnUi.text = "Magazyn Pe³ny!!!";
+            StartCoroutine(FlyText());
+
+        }
+		else
+		{
+            textPosition.position = textStartPosition;
+            textColor.a = 1;
+            iconColor.a = 1;
+            valueOnUi.color = textColor;
+            icon.color = iconColor;
+            valueOfGoods = Random.Range(0, 10);
+            valueOnUi.text = valueOfGoods.ToString();
+
+            icon.sprite = good.goodThumbnail;
+            StartCoroutine(FlyText());
+            WarehouseManager.Instance.AddGoods(randomGoodName, valueOfGoods);
+        }
+        
+    }
+    public void RightClick()
+    {
+        Debug.Log("Building selected");
+        if (!windowToShow)
+        {
+            Debug.LogWarning("WindowToShow not set for that building!");
+            return;
+        }
+
+        windowToShow.Show();
     }
 	private IEnumerator FlyText()
 	{
