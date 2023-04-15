@@ -24,6 +24,13 @@ public class Contract
 
 	public void CheckCompletionAndGiveMoney()
 	{
+		string deliveredGoods = "Delivered goods: ";
+		foreach (KeyValuePair<string, IntPair> goodPair in goods)
+		{
+			deliveredGoods += $"{goodPair.Key} => {goodPair.Value.item1}/{goodPair.Value.item2}";
+		}
+		Debug.Log(deliveredGoods);
+
 		foreach (KeyValuePair<string, IntPair> goodPair in goods)
 		{
 			if (goodPair.Value.item1 != goodPair.Value.item2)

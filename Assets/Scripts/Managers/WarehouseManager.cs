@@ -23,7 +23,7 @@ public class WarehouseManager : Singleton<WarehouseManager>
     }
     public int TakeGoods(string good, int value)
     {
-        if (warehouse.ContainsKey(good) && warehouse[good] >= value)
+        if (warehouse.ContainsKey(good))
         {
             warehouse[good] -= value;
             if (warehouse[good] < 0)

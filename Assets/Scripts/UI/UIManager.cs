@@ -28,12 +28,15 @@ public class UIManager : Singleton<UIManager>
 	public void AddActiveContract(Contract contract)
 	{
 		GameObject newContract = Instantiate(activeContractPrefab, transform.position, Quaternion.identity, activeContractsParent);
+		activeContractDictionary.Add(contract, newContract);
 		ActiveContractUI activeContractUI = newContract.GetComponent<ActiveContractUI>();
 		activeContractUI.Description = contract.description;
+		Debug.Log(activeContractDictionary.Count);
 	}
 
 	public void RemoveActiveContract(Contract contract)
 	{
+		Debug.Log(activeContractDictionary.Count);
 		Destroy(activeContractDictionary[contract].gameObject);
 		activeContractDictionary.Remove(contract);
 	}

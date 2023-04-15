@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wrappings:
   - wrappingName: "Zawi\u0144 w koc"
-    susMeter: 1
+    susMeter: 0.1
     price: 13.99
   - wrappingName: Schowaj w oponach
-    susMeter: 0.25
+    susMeter: 0.05
     price: 199.99
   - wrappingName: "Schowaj pod p\u0142aszczem"
-    susMeter: 2
+    susMeter: 0.15
     price: 0.49

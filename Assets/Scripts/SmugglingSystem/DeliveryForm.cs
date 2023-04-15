@@ -92,6 +92,8 @@ public class DeliveryForm : Window
 
 	public void SetSmuggler(TMP_Dropdown change)
 	{
+		Smuggler smuggler = GameManager.Instance.hiredSmugglers[smugglersDropdown.value - 1];
+		smugglerPanel.GetChild(0).GetComponent<TextMeshProUGUI>().text = smuggler.tiredness.ToString();
 		CalculateDelivery();
 	}
 	

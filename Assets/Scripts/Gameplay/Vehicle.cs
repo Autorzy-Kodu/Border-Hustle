@@ -16,8 +16,7 @@ public class Vehicle
 	public Sprite thumbnail;
 	public GameObject prefab;
 	public float unloadTime;
-	public int capacity;
-	public Dictionary<string, int> load = new ();
+	public int capacity; // FIXME nie działa
 
 	public void GenerateRandom()
 	{

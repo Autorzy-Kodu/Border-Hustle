@@ -18,9 +18,14 @@ public class Road : MonoBehaviour
 
 	private IEnumerator EDriving(GameObject vehiclePrefab, IllegalTransport illegalTransport)
 	{
-		Debug.Log(roadName);
 		Transform vehicle = Instantiate(vehiclePrefab, waypoints[0].transform.position, waypoints[0].transform.rotation, transform).transform;
 		Debug.Log("start driving");
+		string deliveredGoods = "Taken goods: ";
+		foreach (KeyValuePair<string, int> goodPair in illegalTransport.goods)
+		{
+			deliveredGoods += $"{goodPair.Key} => {goodPair.Value}";
+		}
+		Debug.Log(deliveredGoods);
 		int currentWaypoint = 1;
 
 		while (currentWaypoint < waypoints.Count)
@@ -59,7 +64,7 @@ public class Road : MonoBehaviour
 
 		yield return new WaitForSeconds(illegalTransport.vehicle.unloadTime);
 		// TODO rozładuj ładunek
-		foreach (KeyValuePair<string, int> loadPair in illegalTransport.vehicle.load)
+		foreach (KeyValuePair<string, int> loadPair in illegalTransport.goods)
 		{
 			illegalTransport.contract.goods[loadPair.Key].item1 += loadPair.Value;
 			if (illegalTransport.contract.goods[loadPair.Key].item1 > illegalTransport.contract.goods[loadPair.Key].item2)
@@ -113,5 +118,6 @@ public class Road : MonoBehaviour
 		illegalTransport.vehicle.durability -= Random.Range(0.01f, 0.1f);
 		if (illegalTransport.vehicle.durability > 0)
 			GameManager.Instance.vehicles.Add(illegalTransport.vehicle);
+		Destroy(vehiclePrefab);
 	}
 }
