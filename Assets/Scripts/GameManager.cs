@@ -6,10 +6,9 @@ using UnityEngine;
 public class GameManager : Singleton<GameManager>
 {
 	[SerializeField] private float cash;
-	[SerializeField] private List<Contract> activeContracts = new();
-	[SerializeField] private List<Smuggler> hiredSmugglers = new();
-	[SerializeField] private List<Vehicle> transporters = new();
-	[SerializeField] private List<Vehicle> vehicles = new();
+	public List<Contract> activeContracts = new();
+	public List<Smuggler> hiredSmugglers = new();
+	public List<Vehicle> vehicles = new();
 	
 	public float Cash
 	{

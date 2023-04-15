@@ -3,10 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AvailableVehicle : MonoBehaviour
 {
 	[SerializeField] private Vehicle vehicle;
+	[SerializeField] private Image vehicleImage; 
 	[SerializeField] private TextMeshProUGUI vehicleNameText;
 	[SerializeField] private TextMeshProUGUI priceText;
 	[SerializeField] private TextMeshProUGUI durabilityText;
@@ -17,10 +19,10 @@ public class AvailableVehicle : MonoBehaviour
 		vehicle = new Vehicle();
 		vehicle.GenerateRandom();
 		vehicleNameText.text = vehicle.vehicleName;
+		vehicleImage.sprite = vehicle.thumbnail;
 		priceText.text = $"{vehicle.price:0.00}zł";
 	}
-
-	// TODO aktywowane przyciskami z zewnątrz
+	
 	public void Buy()
 	{
 		GameManager.Instance.BuyVehicle(vehicle);

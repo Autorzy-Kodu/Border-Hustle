@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class IllegalTransport
 {
+	public Contract contract;
 	public Smuggler smuggler;
 	public Vehicle vehicle;
-	public List<Package> packages;
+	public Wrapping wrapping;
+	public List<Good> goods;
 }
