@@ -229,6 +229,11 @@ MonoBehaviour:
   vehicle:
     vehicleName: 
     price: 0
+    durability: 0
+    speed: 0
+    type: 0
+    thumbnail: {fileID: 0}
+    prefab: {fileID: 0}
   vehicleNameText: {fileID: 2637002134949224285}
   priceText: {fileID: 1066222142809922066}
   durabilityText: {fileID: 0}
