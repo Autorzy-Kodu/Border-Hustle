@@ -14,7 +14,7 @@ public class Window : MonoBehaviour
 		InputManager.Instance.allowSceneMouseClicks = false;
 	}
 
-	public void Hide()
+	public virtual void Hide()
 	{
 		gameObject.SetActive(false);
 		IsActive = false;

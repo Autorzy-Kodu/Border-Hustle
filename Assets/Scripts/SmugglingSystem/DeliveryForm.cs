@@ -9,7 +9,6 @@ public class DeliveryForm : Window
 {
 	[SerializeField] private TMP_Dropdown contractDropdown;
 	[SerializeField] private TMP_Dropdown smugglersDropdown;
-	[SerializeField] private Transform smugglerPanel;
 	[SerializeField] private TMP_Dropdown roadDropdown;
 	[SerializeField] private TMP_Dropdown wrappingDropdown;
 	[SerializeField] private TMP_Dropdown vehicleDropdown;
@@ -34,6 +33,13 @@ public class DeliveryForm : Window
 			options.Add(optionData);
 		}
 		roadDropdown.AddOptions(options);
+	}
+
+	public override void Hide()
+	{
+		base.Hide();
+        Transform tirednessPanel = smugglersDropdown.transform.GetChild(4);
+        tirednessPanel.gameObject.SetActive(false);
 	}
 
 	private void OnEnable()
@@ -67,6 +73,22 @@ public class DeliveryForm : Window
 
 	public void SetContract(TMP_Dropdown change)
 	{
+		Contract contract = GameManager.Instance.activeContracts[contractDropdown.value - 1];
+
+		var labelText = contractDropdown.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
+		labelText.text = contract.description;
+
+        labelText.text += "<br><font-weight=300><size=15>";
+        labelText.text += contract.organisation;
+
+		var goodsText = contractDropdown.transform.GetChild(3).GetComponent<TextMeshProUGUI>();
+		goodsText.text = "";
+
+		foreach (var good in contract.goods)
+		{
+			goodsText.text += good.Key + ": " + good.Value.item1 + " kg / " + good.Value.item2 + " kg<br>";
+		}
+		
 		CalculateDelivery();
 	}
 
@@ -93,7 +115,42 @@ public class DeliveryForm : Window
 	public void SetSmuggler(TMP_Dropdown change)
 	{
 		Smuggler smuggler = GameManager.Instance.hiredSmugglers[smugglersDropdown.value - 1];
-		smugglerPanel.GetChild(0).GetComponent<TextMeshProUGUI>().text = smuggler.tiredness.ToString();
+
+        var traitText = smugglersDropdown.transform.GetChild(3).GetComponent<TextMeshProUGUI>();
+		traitText.text = "<font-weight=300>";
+
+		foreach (var trait in smuggler.traits)
+		{
+			traitText.text += "<color=#" + ColorUtility.ToHtmlStringRGB(trait.color) + ">";
+			traitText.text += trait.traitName + " -";
+			
+			if (trait.susMultiplier != 1f)
+				traitText.text += " Podejrzliwość: " + trait.susMultiplier + "x";
+			
+			if (trait.costMultiplier != 1f)
+				traitText.text += " Koszt: " + trait.costMultiplier + "x";
+			
+			if (trait.sellMultiplier != 1f)
+				traitText.text += " Zysk: " + trait.sellMultiplier + "x";
+			
+			if (trait.escapeMultiplier != 1f)
+				traitText.text += " Szansa ucieczki: " + trait.escapeMultiplier + "x";
+			
+			if (trait.speedMultiplier != 1f)
+				traitText.text += " Szybkość: " + trait.speedMultiplier + "x";
+
+			traitText.text += "<br>";
+		}
+
+		Transform tirednessPanel = smugglersDropdown.transform.GetChild(4);
+		tirednessPanel.gameObject.SetActive(true);
+		
+        Slider tirednessSlider = tirednessPanel.GetComponent<Slider>(); 
+		tirednessSlider.value = smuggler.tiredness;
+
+		Image tirednessFill = tirednessPanel.GetChild(1).GetChild(0).GetComponent<Image>();
+		tirednessFill.color = Color.Lerp(Color.green, Color.red, tirednessSlider.value / tirednessSlider.maxValue);
+
 		CalculateDelivery();
 	}
 	
