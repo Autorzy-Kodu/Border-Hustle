@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine;
 using Random = UnityEngine.Random;
 
 [Serializable]
@@ -10,6 +11,16 @@ public class Vehicle
 	public float price;
 	public float durability;
 	public float speed;
+	public Type type;
+	public Sprite thumbnail;
+	public GameObject prefab;
+
+	public enum Type
+	{
+		Car,
+		Boat,
+		Plane
+	}
 
 	public void GenerateRandom()
 	{
