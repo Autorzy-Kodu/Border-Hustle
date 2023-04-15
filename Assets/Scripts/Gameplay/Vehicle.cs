@@ -16,7 +16,8 @@ public class Vehicle
 	public Sprite thumbnail;
 	public GameObject prefab;
 	public float unloadTime;
-	public Dictionary<string, int> load;
+	public int capacity;
+	public Dictionary<string, int> load = new ();
 
 	public void GenerateRandom()
 	{

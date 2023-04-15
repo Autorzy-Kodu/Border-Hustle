@@ -27,7 +27,7 @@ MonoBehaviour:
     price: 69
     exploatationCost: 0
     durability: 1
-    speed: 25
+    speed: 20
     type: 0
     thumbnail: {fileID: 21300000, guid: bca22df08a05ed84283f050eb245c0ff, type: 3}
     prefab: {fileID: 7355870466946246441, guid: 7f597ceda86b8774d9eb17337b1da10b,

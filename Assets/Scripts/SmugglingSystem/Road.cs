@@ -28,7 +28,7 @@ public class Road : MonoBehaviour
 			Vector3 targetPosition = waypoints[currentWaypoint].transform.position;
 			Waypoint currentWaypointObject = waypoints[currentWaypoint].GetComponent<Waypoint>();
 
-			while (Vector3.Distance(vehicle.transform.position, targetPosition) > 1f)
+			while (Vector3.Distance(vehicle.transform.position, targetPosition) > 2f)
 			{
 				Vector3 direction = waypoints[currentWaypoint].transform.position - vehicle.transform.position;
 				Quaternion targetRotation = Quaternion.LookRotation(direction);
@@ -79,13 +79,13 @@ public class Road : MonoBehaviour
 			Vector3 targetPosition = reverseWaypoints[currentWaypoint].transform.position;
 			Waypoint currentWaypointObject = reverseWaypoints[currentWaypoint].GetComponent<Waypoint>();
 
-			while (Vector3.Distance(vehicle.transform.position, targetPosition) > 1f)
+			while (Vector3.Distance(vehicle.transform.position, targetPosition) > 2f)
 			{
 				Vector3 direction = reverseWaypoints[currentWaypoint].transform.position - vehicle.transform.position;
 				Quaternion targetRotation = Quaternion.LookRotation(direction);
 				
 				// FIXME dostosować szybkość skręcania
-				vehicle.transform.rotation = Quaternion.Lerp(vehicle.transform.rotation, targetRotation, Time.deltaTime * 2f);
+				vehicle.transform.rotation = Quaternion.Lerp(vehicle.transform.rotation, targetRotation, Time.deltaTime * illegalTransport.vehicle.speed / 3f);
 				vehicle.transform.position += vehicle.transform.forward * (illegalTransport.vehicle.speed * Time.deltaTime * currentWaypointObject.speedModifier);
 				yield return null;
 			}

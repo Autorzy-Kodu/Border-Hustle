@@ -17,6 +17,7 @@ public class WaypointPlacerEditor : Editor
 
 	public override void OnInspectorGUI()
 	{
+		base.OnInspectorGUI();
 		if (GUILayout.Button("Place on ground"))
 		{
 			PlaceWall();
