@@ -8,7 +8,6 @@ public class WarehouseWindow : Window
 {
     [SerializeField] private GameObject newGoodPrefab;
     [SerializeField] private Transform newGoodParent;
-    private List<(string,int)> warehouseList = new List<(string,int)>();
     Dictionary<string,GameObject> goodUi = new Dictionary<string,GameObject>();
 
     private void OnEnable()
