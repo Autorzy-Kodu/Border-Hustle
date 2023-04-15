@@ -21,17 +21,25 @@ public class WarehouseManager : Singleton<WarehouseManager>
         }       
         Debug.Log("W magazynie: " + warehouse[good]);
     }
-    public void TakeGoods(string good, int value)
+    public int TakeGoods(string good, int value)
     {
         if (warehouse.ContainsKey(good) && warehouse[good] >= value)
         {
             warehouse[good] -= value;
+            if (warehouse[good] < 0)
+            {
+	            value += warehouse[good];
+	            warehouse[good] = 0;
+            }
+
             Debug.Log("Removed: " + value + " " + good);
+            return value;
         }
+        return 0;
     }
     public Dictionary<string, int> GetGoods()
     {
-            return warehouse;
+	    return warehouse;
     }
     public void SetWarehouseCapacity(int value)
     {

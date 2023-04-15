@@ -18,7 +18,22 @@ public class Contract
 		time = UnityEngine.Random.Range(10f, 360f);
 		payment = UnityEngine.Random.Range(1000f, 100000f);
 		organisation = "Wyznawcy Chleba";
-		goods.Add("chleb", new IntPair(0, 10));
+		goods.Add("Chleb", new IntPair(0, 10));
 		// TODO na jakiej zasadzie powinny generować się nowe losowe kontrakty?
+	}
+
+	public void CheckCompletionAndGiveMoney()
+	{
+		foreach (KeyValuePair<string, IntPair> goodPair in goods)
+		{
+			if (goodPair.Value.item1 != goodPair.Value.item2)
+			{
+				return;
+			}
+		}
+		
+		Debug.Log("Contract completed!");
+		GameManager.Instance.Cash += payment;
+		GameManager.Instance.RemoveContract(this);
 	}
 }

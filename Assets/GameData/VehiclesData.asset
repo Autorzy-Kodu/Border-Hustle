@@ -23,6 +23,7 @@ MonoBehaviour:
     prefab: {fileID: 7985268598110399571, guid: 660f136bd6ab3e346b86961e23a4293e,
       type: 3}
     unloadTime: 10
+    capacity: 5
   - vehicleName: "Ciem\u017Car\xF3wka"
     price: 69
     exploatationCost: 0
@@ -33,3 +34,4 @@ MonoBehaviour:
     prefab: {fileID: 7355870466946246441, guid: 7f597ceda86b8774d9eb17337b1da10b,
       type: 3}
     unloadTime: 30
+    capacity: 25

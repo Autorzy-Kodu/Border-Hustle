@@ -21,7 +21,6 @@ public class Vehicle
 
 	public void GenerateRandom()
 	{
-		Debug.Log(GameData.Instance.vehiclesData.vehicles.Count);
 		Vehicle vehicle = GameData.Instance.vehiclesData.vehicles[Random.Range(0, GameData.Instance.vehiclesData.vehicles.Count)];
 		vehicleName = vehicle.vehicleName;
 		thumbnail = vehicle.thumbnail;

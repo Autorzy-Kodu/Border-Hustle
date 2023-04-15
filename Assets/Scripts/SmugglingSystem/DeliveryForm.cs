@@ -67,8 +67,6 @@ public class DeliveryForm : Window
 
 	public void SetContract(TMP_Dropdown change)
 	{
-		Debug.Log($"{change.value} chosen");
-		
 		CalculateDelivery();
 	}
 
@@ -94,15 +92,11 @@ public class DeliveryForm : Window
 
 	public void SetSmuggler(TMP_Dropdown change)
 	{
-		Debug.Log($"{change.value} chosen");
-		
 		CalculateDelivery();
 	}
 	
 	public void SetRoad(TMP_Dropdown change)
 	{
-		Debug.Log($"{change.value} chosen");
-		
 		CalculateDelivery();
 	}
 
@@ -128,8 +122,6 @@ public class DeliveryForm : Window
 
 	public void SetVehicle(TMP_Dropdown change)
 	{
-		Debug.Log($"{change.value} chosen");
-		
 		CalculateDelivery();
 	}
 	
@@ -154,8 +146,6 @@ public class DeliveryForm : Window
 	
 	public void SetWrapping(TMP_Dropdown change)
 	{
-		Debug.Log($"{change.value} chosen");
-		
 		CalculateDelivery();
 	}
 	
@@ -190,8 +180,6 @@ public class DeliveryForm : Window
 		else
 			canSend = false;
 
-		// TODO sprawdź czy w magazynie jest wystarczająco
-		
 		income += contractPayment;
 		cost -= smugglerPayment;
 		cost -= vehicleExploatationCost;
@@ -213,8 +201,18 @@ public class DeliveryForm : Window
 		illegalTransport.vehicle = GameManager.Instance.vehicles[vehicleDropdown.value - 1];
 		illegalTransport.wrapping = GameData.Instance.wrappingsData.wrappings[wrappingDropdown.value - 1];
 		// TODO pobierz z magazynu
-		// illegalTransport.goods
-
+		foreach (KeyValuePair<string, IntPair> goodPair in illegalTransport.contract.goods)
+		{
+			int itemsTaken = WarehouseManager.Instance.TakeGoods(goodPair.Key, goodPair.Value.item2);
+			illegalTransport.goods.Add(goodPair.Key, itemsTaken);
+			illegalTransport.vehicle.capacity -= itemsTaken;
+			Debug.Log($"taken {goodPair.Key} {itemsTaken} items");
+		}
+		
+		// TODO sprawdzenie czy cokolwiek zapakowaliśmy
+		
+		GameManager.Instance.hiredSmugglers.Remove(illegalTransport.smuggler);
+		GameManager.Instance.vehicles.Remove(illegalTransport.vehicle);
 		Map.Instance.roads[roadDropdown.value - 1].SmuggleUsingThisRoad(illegalTransport.vehicle.prefab, illegalTransport);
 		Hide();
 	}

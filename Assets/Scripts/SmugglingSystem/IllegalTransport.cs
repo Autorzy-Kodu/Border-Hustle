@@ -8,5 +8,21 @@ public class IllegalTransport
 	public Smuggler smuggler;
 	public Vehicle vehicle;
 	public Wrapping wrapping;
-	public List<Good> goods;
+	public Dictionary<string, int> goods = new ();
+
+	public float CalculateSusPercent()
+	{
+		// TODO napisać formułę liczącą
+		
+		float sus = 0f;
+
+		sus += wrapping.susMeter;
+		
+		foreach (Trait trait in smuggler.traits)
+		{
+			sus *= trait.susMultiplier;
+		}
+
+		return sus;
+	}
 }

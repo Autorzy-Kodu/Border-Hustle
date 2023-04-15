@@ -44,10 +44,9 @@ public class Road : MonoBehaviour
 				Debug.Log("border crossing");
 				BorderCrossing borderCrossing = (BorderCrossing)waypoints[currentWaypoint];
 				yield return new WaitForSeconds(borderCrossing.checkInTime);
-
-				// TODO
+				
 				float skillCheck = Random.Range(0f, 1f);
-				if (skillCheck < borderCrossing.baseFailPercentage)
+				if (skillCheck < borderCrossing.baseFailPercentage + illegalTransport.CalculateSusPercent())
 				{
 					Destroy(gameObject);
 					Debug.LogWarning("Smuggler was caught");
@@ -66,6 +65,7 @@ public class Road : MonoBehaviour
 			if (illegalTransport.contract.goods[loadPair.Key].item1 > illegalTransport.contract.goods[loadPair.Key].item2)
 				illegalTransport.contract.goods[loadPair.Key].item1 = illegalTransport.contract.goods[loadPair.Key].item2;
 		}
+		illegalTransport.contract.CheckCompletionAndGiveMoney();
 		
 		List<Waypoint> reverseWaypoints = new List<Waypoint>(waypoints);
 		reverseWaypoints.Reverse();
@@ -84,7 +84,6 @@ public class Road : MonoBehaviour
 				Vector3 direction = reverseWaypoints[currentWaypoint].transform.position - vehicle.transform.position;
 				Quaternion targetRotation = Quaternion.LookRotation(direction);
 				
-				// FIXME dostosować szybkość skręcania
 				vehicle.transform.rotation = Quaternion.Lerp(vehicle.transform.rotation, targetRotation, Time.deltaTime * illegalTransport.vehicle.speed / 3f);
 				vehicle.transform.position += vehicle.transform.forward * (illegalTransport.vehicle.speed * Time.deltaTime * currentWaypointObject.speedModifier);
 				yield return null;
@@ -95,10 +94,9 @@ public class Road : MonoBehaviour
 				Debug.Log("border crossing");
 				BorderCrossing borderCrossing = (BorderCrossing)reverseWaypoints[currentWaypoint];
 				yield return new WaitForSeconds(borderCrossing.checkInTime);
-
-				// TODO
+				
 				float skillCheck = Random.Range(0f, 1f);
-				if (skillCheck < borderCrossing.baseFailPercentage)
+				if (skillCheck < borderCrossing.baseFailPercentage + illegalTransport.CalculateSusPercent())
 				{
 					Destroy(gameObject);
 					Debug.LogWarning("Smuggler was caught");
@@ -108,5 +106,12 @@ public class Road : MonoBehaviour
 			
 			currentWaypoint++;
 		}
+
+		// powrót ekipy do bazy
+		illegalTransport.smuggler.tiredness += Random.Range(0.01f, 0.1f);
+		GameManager.Instance.hiredSmugglers.Add(illegalTransport.smuggler);
+		illegalTransport.vehicle.durability -= Random.Range(0.01f, 0.1f);
+		if (illegalTransport.vehicle.durability > 0)
+			GameManager.Instance.vehicles.Add(illegalTransport.vehicle);
 	}
 }
