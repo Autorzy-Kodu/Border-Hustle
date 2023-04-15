@@ -11,7 +11,7 @@ public class UIManager : Singleton<UIManager>
 	[SerializeField] private Slider heatSlider;
 	[SerializeField] private Transform activeContractsParent;
 	[SerializeField] private GameObject activeContractPrefab;
-	private Dictionary<Contract, GameObject> activeContractDictionary;
+	private Dictionary<Contract, GameObject> activeContractDictionary = new ();
 
 	[SerializeField] private bool gamePaused;
 	

@@ -86,7 +86,7 @@ public class GameManager : Singleton<GameManager>
 			foreach (Smuggler smuggler in hiredSmugglers)
 			{
 				smuggler.tiredness -= Random.Range(0.01f, 0.1f);
-				if (smuggler.tiredness == 0)
+				if (smuggler.tiredness < 0)
 				{
 					smuggler.tiredness = 0;
 				}

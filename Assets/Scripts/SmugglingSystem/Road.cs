@@ -118,6 +118,6 @@ public class Road : MonoBehaviour
 		illegalTransport.vehicle.durability -= Random.Range(0.01f, 0.1f);
 		if (illegalTransport.vehicle.durability > 0)
 			GameManager.Instance.vehicles.Add(illegalTransport.vehicle);
-		Destroy(vehiclePrefab);
+		Destroy(vehicle.gameObject);
 	}
 }
