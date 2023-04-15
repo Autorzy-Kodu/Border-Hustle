@@ -15,3 +15,5 @@ MonoBehaviour:
   goods:
   - goodName: Chleb
     goodThumbnail: {fileID: 21300000, guid: 005a87ac61266a94e844a069dd9130f0, type: 3}
+  - goodName: Chleb2
+    goodThumbnail: {fileID: 21300000, guid: 005a87ac61266a94e844a069dd9130f0, type: 3}
