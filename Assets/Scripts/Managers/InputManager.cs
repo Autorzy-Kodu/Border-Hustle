@@ -5,8 +5,8 @@ using UnityEngine.InputSystem;
 
 public class InputManager : Singleton<InputManager>
 {
-	
 	[SerializeField] Vector2 mousePosition;
+	public bool allowSceneMouseClicks = true;
 
 	public void MousePosition (InputAction.CallbackContext context) {
 		mousePosition = context.ReadValue<Vector2>();
@@ -16,6 +16,9 @@ public class InputManager : Singleton<InputManager>
 	
 	public void MouseClick(InputAction.CallbackContext context)
 	{
+		if (!allowSceneMouseClicks)
+			return;
+		
 		if (!context.performed)
 			return;
 		

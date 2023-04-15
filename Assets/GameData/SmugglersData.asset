@@ -14,8 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   smugglersNames:
   - Piotr
+  - Tomasz
+  - Marek
+  - "\u0141ukasz"
+  - Tobiasz
+  - Mariusz
   smugglersLastNames:
   - "Bo\u017Cek"
+  - Towarek
+  - "B\u0105k"
   smugglersPortraits:
   - {fileID: 21300000, guid: e4c578a1915470c45852c75f5b45fb8f, type: 3}
   - {fileID: 21300000, guid: b9ac86eaaed00e04c85182afc3faaee6, type: 3}

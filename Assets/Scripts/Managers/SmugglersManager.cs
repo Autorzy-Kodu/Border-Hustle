@@ -18,7 +18,7 @@ public class SmugglersManager : MonoBehaviour
 		while (transform.childCount < availableSmugglers)
 		{
 			// TODO wygeneruj losowego przemytnika
-			Instantiate(newSmugglerPrefab, Vector3.zero, Quaternion.identity, transform);
+			Instantiate(newSmugglerPrefab, transform.position, Quaternion.identity, transform);
 		}
 	}
 }

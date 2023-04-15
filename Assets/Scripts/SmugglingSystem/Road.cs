@@ -12,6 +12,7 @@ public class Road : MonoBehaviour
 
 	private void Start()
 	{
+		// TODO debug only
 		Vehicle vehicle = new Vehicle();
 		vehicle.speed = 5f;
 		SmuggleUsingThisRoad(dummyCarPrefab, vehicle);
@@ -20,10 +21,10 @@ public class Road : MonoBehaviour
 	// TODO zamiast vehicle jakaś klasa transportu na którą składa się przemytnik, ładunek, pojazd i tak dalej
 	public void SmuggleUsingThisRoad(GameObject vehiclePrefab, Vehicle vehicleData)
 	{
-		StartCoroutine(IDriving(vehiclePrefab, vehicleData));
+		StartCoroutine(EDriving(vehiclePrefab, vehicleData));
 	}
 
-	IEnumerator IDriving(GameObject vehiclePrefab, Vehicle vehicleData)
+	private IEnumerator EDriving(GameObject vehiclePrefab, Vehicle vehicleData)
 	{
 		Transform vehicle = Instantiate(vehiclePrefab, waypoints[0].transform.position, waypoints[0].transform.rotation, transform).transform;
 		Debug.Log("start driving");
