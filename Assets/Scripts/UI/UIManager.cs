@@ -11,6 +11,8 @@ public class UIManager : Singleton<UIManager>
 	[SerializeField] private Slider heatSlider;
 	[SerializeField] private Transform activeContractsParent;
 	[SerializeField] private GameObject activeContractPrefab;
+
+	[SerializeField] private bool gamePaused;
 	
 	public float Cash
 	{
@@ -27,5 +29,11 @@ public class UIManager : Singleton<UIManager>
 		GameObject newContract = Instantiate(activeContractPrefab, transform.position, Quaternion.identity, activeContractsParent);
 		ActiveContractUI activeContractUI = newContract.GetComponent<ActiveContractUI>();
 		activeContractUI.Description = contract.description;
+	}
+
+	public void TogglePause()
+	{
+		GameManager.Instance.GameSpeed = gamePaused ? 1f : 0f;
+		gamePaused = !gamePaused;
 	}
 }

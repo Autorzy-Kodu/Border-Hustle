@@ -20,11 +20,15 @@ public class GameManager : Singleton<GameManager>
 		}
 	}
 
+	public float GameSpeed {
+		set => Time.timeScale = value;
+	}
+
 	public int MaxContractsLimit { get; set; }
 	public int MaxSmugglersLimit { get; set; }
 	public int MaxVehiclesLimit { get; set; }
 
-	protected override void Awake()
+	protected void Start()
 	{
 		base.Awake();
 		Cash = 100;

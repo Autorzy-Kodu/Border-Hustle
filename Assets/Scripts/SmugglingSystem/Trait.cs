@@ -8,6 +8,7 @@ public class Trait
 {
 	public string traitName;
 	public float rarity;
+	public Color color;
 	[Range(0f, 10f)] public float susMultiplier;
 	[Range(0f, 10f)] public float costMultiplier;
 	[Range(0f, 10f)] public float sellMultiplier;
