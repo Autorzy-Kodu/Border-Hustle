@@ -132,6 +132,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fullNameText: {fileID: 6055141556291522867}
   portraitImage: {fileID: 8818689115559337646}
+  hirePriceText: {fileID: 6055141555841092167}
   smugglerTraitsParent: {fileID: 6055141556276464632}
   smugglerTraitPrefab: {fileID: 3124240130073732565, guid: e1bdd776416b34f4683e975924a2ff45,
     type: 3}

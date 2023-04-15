@@ -6,10 +6,9 @@ using UnityEngine;
 public class GameManager : Singleton<GameManager>
 {
 	[SerializeField] private float cash;
-	[SerializeField] private List<Contract> activeContracts = new();
-	[SerializeField] private List<Smuggler> hiredSmugglers = new();
-	[SerializeField] private List<Vehicle> transporters = new();
-	[SerializeField] private List<Vehicle> vehicles = new();
+	public List<Contract> activeContracts = new();
+	public List<Smuggler> hiredSmugglers = new();
+	public List<Vehicle> vehicles = new();
 	
 	public float Cash
 	{
@@ -35,6 +34,7 @@ public class GameManager : Singleton<GameManager>
 		MaxContractsLimit = 3;
 		MaxSmugglersLimit = 3;
 		MaxVehiclesLimit = 3;
+		StartCoroutine(ECrewRest());
 	}
 
 	public void AddContract(Contract contract)
@@ -48,7 +48,13 @@ public class GameManager : Singleton<GameManager>
 		activeContracts.Add(contract);
 		UIManager.Instance.AddActiveContract(contract);
 	}
-	
+
+	public void RemoveContract(Contract contract)
+	{
+		activeContracts.Remove(contract);
+		UIManager.Instance.RemoveActiveContract(contract);
+	}
+
 	public void HireSmuggler(Smuggler smuggler)
 	{
 		if (hiredSmugglers.Count >= MaxSmugglersLimit)
@@ -71,5 +77,21 @@ public class GameManager : Singleton<GameManager>
 
 		Cash -= vehicle.price;
 		vehicles.Add(vehicle);
+	}
+
+	IEnumerator ECrewRest()
+	{
+		while (true)
+		{
+			foreach (Smuggler smuggler in hiredSmugglers)
+			{
+				smuggler.tiredness -= Random.Range(0.01f, 0.1f);
+				if (smuggler.tiredness < 0)
+				{
+					smuggler.tiredness = 0;
+				}
+			}
+			yield return new WaitForSeconds(10f);
+		}
 	}
 }

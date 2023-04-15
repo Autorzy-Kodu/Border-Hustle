@@ -12,20 +12,25 @@ public class AvailableSmuggler : MonoBehaviour
 
 	[SerializeField] private TextMeshProUGUI fullNameText;
 	[SerializeField] private Image portraitImage;
+	[SerializeField] private TextMeshProUGUI hirePriceText;
 	[SerializeField] private Transform smugglerTraitsParent;
 	[SerializeField] private GameObject smugglerTraitPrefab;
 
+	// TODO tylko debug
 	private void Start()
 	{
 		smugglersData = GameData.Instance.smugglersData;
 		smuggler = new Smuggler
 		{
 			fullName = smugglersData.GetRandomFullName(),
-			portrait = smugglersData.GetRandomPortrait()
+			portrait = smugglersData.GetRandomPortrait(),
+			hirePrice = 100,
+			paymentPercent = 0.1f
 		};
 		fullNameText.text = smuggler.fullName;
 		portraitImage.sprite = smuggler.portrait;
-		
+		hirePriceText.text = $"{smuggler.hirePrice}zł";
+
 		smuggler.traits.Add(GameData.Instance.traitsData.traits[0]);
 
 		foreach (Trait trait in smuggler.traits)

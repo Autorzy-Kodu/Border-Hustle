@@ -9,4 +9,5 @@ public class GameData : Singleton<GameData>
 	public GoodsData goodsData;
 	public WrappingsData wrappingsData;
 	public TraitsData traitsData;
+	public OrganisationsData organisationsData;
 }

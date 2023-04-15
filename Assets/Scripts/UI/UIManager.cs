@@ -11,6 +11,7 @@ public class UIManager : Singleton<UIManager>
 	[SerializeField] private Slider heatSlider;
 	[SerializeField] private Transform activeContractsParent;
 	[SerializeField] private GameObject activeContractPrefab;
+	private Dictionary<Contract, GameObject> activeContractDictionary = new ();
 
 	[SerializeField] private bool gamePaused;
 	
@@ -27,8 +28,22 @@ public class UIManager : Singleton<UIManager>
 	public void AddActiveContract(Contract contract)
 	{
 		GameObject newContract = Instantiate(activeContractPrefab, transform.position, Quaternion.identity, activeContractsParent);
+		activeContractDictionary.Add(contract, newContract);
 		ActiveContractUI activeContractUI = newContract.GetComponent<ActiveContractUI>();
 		activeContractUI.Description = contract.description;
+		Debug.Log(activeContractDictionary.Count);
+	}
+
+	public void RemoveActiveContract(Contract contract)
+	{
+		Debug.Log(activeContractDictionary.Count);
+		Destroy(activeContractDictionary[contract].gameObject);
+		activeContractDictionary.Remove(contract);
+	}
+
+	public void RefreshActiveContract(Contract contract)
+	{
+
 	}
 
 	public void TogglePause()
