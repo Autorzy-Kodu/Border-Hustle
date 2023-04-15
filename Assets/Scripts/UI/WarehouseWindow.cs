@@ -19,6 +19,7 @@ public class WarehouseWindow : Window
 
             goodUi[good.Key].transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = good.Key;
             goodUi[good.Key].transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = good.Value.ToString();
+            goodUi[good.Key].transform.GetChild(2).GetComponent<Image>().sprite = GameData.Instance.goodsData.goodsDictionary[good.Key].goodThumbnail;
         }
     }
 }

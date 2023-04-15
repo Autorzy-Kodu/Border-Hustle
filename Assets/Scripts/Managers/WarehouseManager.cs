@@ -7,6 +7,8 @@ public class WarehouseManager : Singleton<WarehouseManager>
 {
     Dictionary<string, int> warehouse = new Dictionary<string, int>();
     int warehouseCapacity=50;
+    string activeGoodName;
+    int actualClickValue;
     public void AddGoods(string good,int value)
     {
         if (!warehouse.ContainsKey(good))
@@ -40,5 +42,22 @@ public class WarehouseManager : Singleton<WarehouseManager>
     public int GetWarehouseCapacity()
     {
         return warehouseCapacity;
+    }
+    public void SetActiveGood(string name)
+    {
+        activeGoodName = name;
+    }
+    public string GetActiveGood()
+    {
+        return activeGoodName;
+    }
+
+    public void SetActualClickValue(int name)
+    {
+        actualClickValue = name;
+    }
+    public int GetActualClickValue()
+    {
+        return actualClickValue;
     }
 }

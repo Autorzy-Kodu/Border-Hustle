@@ -13,7 +13,11 @@ MonoBehaviour:
   m_Name: GoodsData
   m_EditorClassIdentifier: 
   goods:
-  - goodName: Chleb
+  - goodName: 1
     goodThumbnail: {fileID: 21300000, guid: 005a87ac61266a94e844a069dd9130f0, type: 3}
-  - goodName: Chleb2
-    goodThumbnail: {fileID: 21300000, guid: 005a87ac61266a94e844a069dd9130f0, type: 3}
+  - goodName: 2
+    goodThumbnail: {fileID: 21300000, guid: d7094718bdac022428dd29244922d06b, type: 3}
+  - goodName: 3
+    goodThumbnail: {fileID: 21300000, guid: a67b58d6cddcd4345b1e001340de5a76, type: 3}
+  - goodName: 4
+    goodThumbnail: {fileID: 21300000, guid: 3042b019b052942a1baf7aa49d7ca6bb, type: 3}
