@@ -7,24 +7,27 @@ using Random = UnityEngine.Random;
 public class Road : MonoBehaviour
 {
 	public string roadName;
+	public Sprite sprite;
 	[SerializeField] private GameObject dummyCarPrefab;
 	[SerializeField] private List<Waypoint> waypoints;
 
 	private void Start()
 	{
 		// TODO debug only
+		IllegalTransport illegalTransport = new IllegalTransport();
 		Vehicle vehicle = new Vehicle();
 		vehicle.speed = 5f;
-		SmuggleUsingThisRoad(dummyCarPrefab, vehicle);
+		illegalTransport.vehicle = vehicle;
+		SmuggleUsingThisRoad(dummyCarPrefab, illegalTransport);
 	}
 
 	// TODO zamiast vehicle jakaś klasa transportu na którą składa się przemytnik, ładunek, pojazd i tak dalej
-	public void SmuggleUsingThisRoad(GameObject vehiclePrefab, Vehicle vehicleData)
+	public void SmuggleUsingThisRoad(GameObject vehiclePrefab, IllegalTransport illegalTransport)
 	{
-		StartCoroutine(EDriving(vehiclePrefab, vehicleData));
+		StartCoroutine(EDriving(vehiclePrefab, illegalTransport));
 	}
 
-	private IEnumerator EDriving(GameObject vehiclePrefab, Vehicle vehicleData)
+	private IEnumerator EDriving(GameObject vehiclePrefab, IllegalTransport illegalTransport)
 	{
 		Transform vehicle = Instantiate(vehiclePrefab, waypoints[0].transform.position, waypoints[0].transform.rotation, transform).transform;
 		Debug.Log("start driving");
@@ -42,7 +45,7 @@ public class Road : MonoBehaviour
 				
 				// FIXME dostosować szybkość skręcania
 				vehicle.transform.rotation = Quaternion.Lerp(vehicle.transform.rotation, targetRotation, Time.deltaTime * 2f);
-				vehicle.transform.position += vehicle.transform.forward * (vehicleData.speed * Time.deltaTime * currentWaypointObject.speedModifier);
+				vehicle.transform.position += vehicle.transform.forward * (illegalTransport.vehicle.speed * Time.deltaTime * currentWaypointObject.speedModifier);
 				yield return null;
 			}
 			
