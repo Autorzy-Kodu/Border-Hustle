@@ -12,6 +12,8 @@ public class AvailableSmuggler : MonoBehaviour
 
 	[SerializeField] private TextMeshProUGUI fullNameText;
 	[SerializeField] private Image portraitImage;
+	[SerializeField] private Transform smugglerTraitsParent;
+	[SerializeField] private GameObject smugglerTraitPrefab;
 
 	private void Start()
 	{
@@ -23,6 +25,15 @@ public class AvailableSmuggler : MonoBehaviour
 		};
 		fullNameText.text = smuggler.fullName;
 		portraitImage.sprite = smuggler.portrait;
+		
+		smuggler.traits.Add(GameData.Instance.traitsData.traits[0]);
+
+		foreach (Trait trait in smuggler.traits)
+		{
+			TextMeshProUGUI smugglerTrait = Instantiate(smugglerTraitPrefab, smugglerTraitsParent.position, Quaternion.identity, smugglerTraitsParent).GetComponent<TextMeshProUGUI>();
+			smugglerTrait.text = trait.traitName;
+			smugglerTrait.color = trait.color;
+		}
 	}
 
 	// TODO aktywowane przyciskami z zewnątrz
