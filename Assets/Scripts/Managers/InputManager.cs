@@ -22,5 +22,7 @@ public class InputManager : Singleton<InputManager>
 		
 		if (Physics.Raycast(MainCamera.Instance.GetCamera.ScreenPointToRay(mousePosition), out RaycastHit rHit, 500f))
 			rHit.collider.GetComponent<ISelectable>()?.Select();
-	}
+        if (Physics.Raycast(MainCamera.Instance.GetCamera.ScreenPointToRay(mousePosition), out RaycastHit rHit2, 500f))
+            rHit2.collider.GetComponent<IClickable>()?.Click();
+    }
 }
