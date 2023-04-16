@@ -13,11 +13,29 @@ MonoBehaviour:
   m_Name: GoodsData
   m_EditorClassIdentifier: 
   goods:
-  - goodName: 1
+  - goodName: Chleb
     goodThumbnail: {fileID: 21300000, guid: 005a87ac61266a94e844a069dd9130f0, type: 3}
-  - goodName: 2
-    goodThumbnail: {fileID: 21300000, guid: d7094718bdac022428dd29244922d06b, type: 3}
-  - goodName: 3
-    goodThumbnail: {fileID: 21300000, guid: a67b58d6cddcd4345b1e001340de5a76, type: 3}
-  - goodName: 4
-    goodThumbnail: {fileID: 21300000, guid: 3042b019b052942a1baf7aa49d7ca6bb, type: 3}
+  - goodName: "Broku\u0142y"
+    goodThumbnail: {fileID: 21300000, guid: 05749b2a902ebae4588393e52458a9bf, type: 3}
+  - goodName: Lizaki
+    goodThumbnail: {fileID: 21300000, guid: 89ac33d6669108f4ea994b28b37e571b, type: 3}
+  - goodName: Cukierki
+    goodThumbnail: {fileID: 21300000, guid: 82d3d9e0d6a42004084e95dffebf8917, type: 3}
+  - goodName: "\u017Belki"
+    goodThumbnail: {fileID: 21300000, guid: c8441afe07a13d14c94f55f5d6804e89, type: 3}
+  - goodName: "W\u0119giel"
+    goodThumbnail: {fileID: 21300000, guid: 936ee5db9652de4458982979dcde1fec, type: 3}
+  - goodName: Cukier
+    goodThumbnail: {fileID: 21300000, guid: 8a145726842a5504e91b69c37918bc7d, type: 3}
+  - goodName: "S\u0142odkie bu\u0142ki"
+    goodThumbnail: {fileID: 21300000, guid: 6dc45e3653e41b449adbf370a7fd48e6, type: 3}
+  - goodName: Deski
+    goodThumbnail: {fileID: 21300000, guid: d0209827d110f2648802e5ad958fc604, type: 3}
+  - goodName: "Dach\xF3wki"
+    goodThumbnail: {fileID: 21300000, guid: ef261872ce5a5a24e845614ada569af5, type: 3}
+  - goodName: Strugane figurki
+    goodThumbnail: {fileID: 21300000, guid: d821677b260ada64e8adc7debb53b073, type: 3}
+  - goodName: "\u017Belazka"
+    goodThumbnail: {fileID: 21300000, guid: 0d57189e8ce1958419ef1efa65293e4c, type: 3}
+  - goodName: "W\u0119dliny"
+    goodThumbnail: {fileID: 21300000, guid: dd641b648130f4d4fa8399a0dd211970, type: 3}

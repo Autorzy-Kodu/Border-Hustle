@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 [Serializable]
 public class Contract
@@ -12,14 +13,22 @@ public class Contract
 	public string organisation;
 	public Dictionary<string, IntPair> goods = new ();
 
-	public void GenerateRandom()
+	public static Contract GenerateRandom()
 	{
-		description = "Lorem ipsum";
-		time = UnityEngine.Random.Range(10f, 360f);
-		payment = UnityEngine.Random.Range(1000f, 100000f);
-		organisation = "Wyznawcy Chleba";
-		goods.Add("Chleb", new IntPair(0, 10));
-		// TODO na jakiej zasadzie powinny generować się nowe losowe kontrakty?
+		Contract contract = new Contract();
+		contract.description = contractsDescrptions[Random.Range(0, contractsDescrptions.Count)];
+		contract.time = Random.Range(600f, 3600f);
+		contract.organisation = GameData.Instance.organisationsData.GetRandom().organizationName;
+		float nextGoodProbability = 1f;
+		contract.payment = Random.Range(100f, 1000f);
+		while (Random.Range (0f, 1f) < nextGoodProbability)
+		{
+			int amount = Random.Range(5, WarehouseManager.Instance.GetWarehouseCapacity());
+			contract.goods.Add(GameData.Instance.goodsData.GetRandom().goodName, new IntPair(0, amount));
+			contract.payment += amount * Random.Range(75f, 250f);
+			nextGoodProbability *= nextGoodProbability;
+		}
+		return contract;
 	}
 
 	public void CheckCompletionAndGiveMoney()
@@ -43,4 +52,11 @@ public class Contract
 		GameManager.Instance.Cash += payment;
 		GameManager.Instance.RemoveContract(this);
 	}
+
+	public static List<string> contractsDescrptions = new List<string>() {
+		"Ciężka dostawa tylko dla twardzieli!",
+		"Tylko 1% ludzi potrafi wykonać tę dostawę!!!",
+		"Gorący towar, potrzebna dostawa dopóki się sprzedaje",
+		"Uczciwa zapłata za nieuczciwą pracę"
+	};
 }

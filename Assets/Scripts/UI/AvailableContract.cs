@@ -14,8 +14,16 @@ public class AvailableContract : MonoBehaviour
 	
 	private void Start()
 	{
-		contract = new Contract();
-		contract.GenerateRandom();
+		contract = Contract.GenerateRandom();
+		contractTimeText.text = $"{contract.time}";
+		contractPaymentText.text = $"{contract.payment}zł";
+		organizationLogo.sprite = GameData.Instance.organisationsData.organisationsDictionary[contract.organisation].logo;
+		StartCoroutine(ClockTick());
+	}
+
+	public void SetContract(Contract newContract)
+	{
+		contract = newContract;
 		contractTimeText.text = $"{contract.time}";
 		contractPaymentText.text = $"{contract.payment}zł";
 		organizationLogo.sprite = GameData.Instance.organisationsData.organisationsDictionary[contract.organisation].logo;
@@ -32,5 +40,15 @@ public class AvailableContract : MonoBehaviour
 	public void RejectContract()
 	{
 		Destroy(gameObject);
+	}
+
+	IEnumerator ClockTick()
+	{
+		while (contract.time > 0)
+		{
+			contract.time--;
+			contractTimeText.text = $"{contract.time}";
+			yield return new WaitForSeconds(1f);
+		}
 	}
 }
