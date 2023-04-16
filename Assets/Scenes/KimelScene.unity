@@ -22525,6 +22525,7 @@ MonoBehaviour:
   textPosition: {fileID: 622250470}
   icon: {fileID: 1333899961}
   windowToShow: {fileID: 1402015719}
+  actualClickvalue: 0
 --- !u!65 &1096292978
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -29008,6 +29009,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dropdown: {fileID: 1995627406}
   goodText: {fileID: 1123231658}
+  priceText: {fileID: 0}
+  clickValueText: {fileID: 0}
+  warehouseUpgradePrice: {fileID: 0}
 --- !u!1 &1412781256
 GameObject:
   m_ObjectHideFlags: 0
@@ -38097,7 +38101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a47f1b3e5c007a439b57314f0bc6ad1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newVehiclePrefab: {fileID: 4125574801837304568, guid: 3f141616d1816a84caa980d953da7900,
+  newVehiclePrefab: {fileID: 1365704219727412949, guid: 3132b833273ce364ca05b577b8d2091e,
     type: 3}
   availableVehicles: 3
 --- !u!114 &1850133638

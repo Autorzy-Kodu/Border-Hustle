@@ -8,7 +8,7 @@ using Random = UnityEngine.Random;
 public class Contract
 {
 	public string description;
-	public float time;
+	public int time;
 	public float payment;
 	public string organisation;
 	public Dictionary<string, IntPair> goods = new ();
@@ -17,16 +17,18 @@ public class Contract
 	{
 		Contract contract = new Contract();
 		contract.description = contractsDescrptions[Random.Range(0, contractsDescrptions.Count)];
-		contract.time = Random.Range(600f, 3600f);
+		contract.time = Random.Range(600, 3600);
 		contract.organisation = GameData.Instance.organisationsData.GetRandom().organizationName;
 		float nextGoodProbability = 1f;
 		contract.payment = Random.Range(100f, 1000f);
 		while (Random.Range (0f, 1f) < nextGoodProbability)
 		{
+			if (contract.goods.Count > 3)
+				break;
 			int amount = Random.Range(5, WarehouseManager.Instance.GetWarehouseCapacity());
-			contract.goods.Add(GameData.Instance.goodsData.GetRandom().goodName, new IntPair(0, amount));
+			contract.goods.TryAdd(GameData.Instance.goodsData.GetRandom().goodName, new IntPair(0, amount));
 			contract.payment += amount * Random.Range(75f, 250f);
-			nextGoodProbability *= nextGoodProbability;
+			nextGoodProbability *= 0.35f;
 		}
 		return contract;
 	}

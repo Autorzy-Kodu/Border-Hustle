@@ -9,14 +9,16 @@ public class AvailableContract : MonoBehaviour
 {
 	private Contract contract;
 	[SerializeField] private Image organizationLogo;
+	[SerializeField] private TextMeshProUGUI contractDescriptionText;
 	[SerializeField] private TextMeshProUGUI contractTimeText;
 	[SerializeField] private TextMeshProUGUI contractPaymentText;
 	
 	private void Start()
 	{
 		contract = Contract.GenerateRandom();
+		contractDescriptionText.text = contract.description;
 		contractTimeText.text = $"{contract.time}";
-		contractPaymentText.text = $"{contract.payment}zł";
+		contractPaymentText.text = $"{contract.payment:0.00}zł";
 		organizationLogo.sprite = GameData.Instance.organisationsData.organisationsDictionary[contract.organisation].logo;
 		StartCoroutine(ClockTick());
 	}
@@ -24,8 +26,9 @@ public class AvailableContract : MonoBehaviour
 	public void SetContract(Contract newContract)
 	{
 		contract = newContract;
-		contractTimeText.text = $"{contract.time}";
-		contractPaymentText.text = $"{contract.payment}zł";
+		contractDescriptionText.text = contract.description;
+		contractTimeText.text = $"{TimeSpan.FromSeconds(contract.time)}";
+		contractPaymentText.text = $"{contract.payment:0.00}zł";
 		organizationLogo.sprite = GameData.Instance.organisationsData.organisationsDictionary[contract.organisation].logo;
 	}
 
@@ -47,7 +50,7 @@ public class AvailableContract : MonoBehaviour
 		while (contract.time > 0)
 		{
 			contract.time--;
-			contractTimeText.text = $"{contract.time}";
+			contractTimeText.text = $"{TimeSpan.FromSeconds(contract.time)}";
 			yield return new WaitForSeconds(1f);
 		}
 	}

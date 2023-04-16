@@ -169,6 +169,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   organizationLogo: {fileID: 8075484785096211490}
+  contractDescriptionText: {fileID: 8075484785030360580}
   contractTimeText: {fileID: 8075484785811795841}
   contractPaymentText: {fileID: 8075484784694579457}
 --- !u!1 &8075484784229416245
@@ -372,7 +373,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: <font-weight="700" >Accept</font-weight>
+  m_text: <font-weight="700" >Akceptuj</font-weight>
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 380f6670fe9f8224c8befe0aca97bfdf, type: 2}
   m_sharedMaterial: {fileID: -4900905564439196812, guid: 380f6670fe9f8224c8befe0aca97bfdf,
