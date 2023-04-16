@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics.Contracts;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -7,6 +8,7 @@ public class WarehouseManager : Singleton<WarehouseManager>
 {
     Dictionary<string, int> warehouse = new Dictionary<string, int>();
     int warehouseCapacity=50;
+    int warehouseUpgradePrice = 100;
     string activeGoodName;
     int actualClickValue;
     public void AddGoods(string good,int value)
@@ -43,9 +45,13 @@ public class WarehouseManager : Singleton<WarehouseManager>
     {
 	    return warehouse;
     }
-    public void SetWarehouseCapacity(int value)
+    public void SetWarehouseCapacity()
     {
-        warehouseCapacity = value;
+        if (GameManager.Instance.Cash >= warehouseUpgradePrice)
+        {
+            warehouseCapacity += 20;
+            warehouseUpgradePrice += 60;
+        }
     }
     public int GetWarehouseCapacity()
     {
@@ -67,5 +73,9 @@ public class WarehouseManager : Singleton<WarehouseManager>
     public int GetActualClickValue()
     {
         return actualClickValue;
+    }
+    public int GetWarehouseUpgradePrice()
+    {
+        return warehouseUpgradePrice;
     }
 }

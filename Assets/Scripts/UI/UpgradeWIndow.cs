@@ -12,6 +12,8 @@ public class UpgradeWIndow : Window
     TextMeshProUGUI priceText;
     [SerializeField]
     TextMeshProUGUI clickValueText;
+    [SerializeField]
+    TextMeshProUGUI warehouseUpgradePrice;
     int clickUpgradePrice = 10;
     int clickvalue = 5;
     
@@ -47,6 +49,10 @@ public class UpgradeWIndow : Window
             priceText.text = clickUpgradePrice.ToString();
 
         }
+    }
+    public void UpdateWarehousePrice()
+    {
+        warehouseUpgradePrice.text = WarehouseManager.Instance.GetWarehouseUpgradePrice().ToString();
     }
 
 }
