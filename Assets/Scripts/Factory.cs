@@ -22,7 +22,7 @@ public class Factory : MonoBehaviour, IClickable
     List<string> goodName = new List<string>();
     int clickUpgradePrice = 10;
     int clickvalue=3;
-    public int actualClickvalue;
+    private int actualClickvalue;
     private void Start()
 	{
 		textStartPosition = textPosition.position;
@@ -75,7 +75,6 @@ public class Factory : MonoBehaviour, IClickable
             Debug.LogWarning("WindowToShow not set for that building!");
             return;
         }
-
         windowToShow.Show();
     }
 	private IEnumerator FlyText()

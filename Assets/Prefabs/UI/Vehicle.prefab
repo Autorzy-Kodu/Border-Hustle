@@ -136,12 +136,13 @@ MonoBehaviour:
     exploatationCost: 0
     durability: 0
     speed: 0
+    susMeter: 0
     type: 0
     thumbnail: {fileID: 0}
     prefab: {fileID: 0}
     unloadTime: 0
     capacity: 0
-  vehicleImage: {fileID: 0}
+  vehicleImage: {fileID: 8818689115559337646}
   vehicleNameText: {fileID: 6055141556291522867}
   priceText: {fileID: 6055141555841092167}
   durabilityText: {fileID: 0}
@@ -655,7 +656,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: <font-weight="700" >Zatrudnij</font-weight>
+  m_text: <font-weight="700" >Kup</font-weight>
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 380f6670fe9f8224c8befe0aca97bfdf, type: 2}
   m_sharedMaterial: {fileID: -4900905564439196812, guid: 380f6670fe9f8224c8befe0aca97bfdf,
@@ -847,9 +848,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: AvailableSmuggler, Assembly-CSharp
-        m_MethodName: Reject
+      - m_Target: {fileID: 608965774035584741}
+        m_TargetAssemblyTypeName: AvailableVehicle, Assembly-CSharp
+        m_MethodName: Discard
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -981,9 +982,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: AvailableSmuggler, Assembly-CSharp
-        m_MethodName: Hire
+      - m_Target: {fileID: 608965774035584741}
+        m_TargetAssemblyTypeName: AvailableVehicle, Assembly-CSharp
+        m_MethodName: Buy
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

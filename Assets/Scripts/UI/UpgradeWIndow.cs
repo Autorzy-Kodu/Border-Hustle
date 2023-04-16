@@ -16,12 +16,12 @@ public class UpgradeWIndow : Window
     TextMeshProUGUI warehouseUpgradePrice;
     int clickUpgradePrice = 10;
     int clickvalue = 5;
-    
+
     private void Start()
     {
-        goodText.text = WarehouseManager.Instance.GetActiveGood();
-        clickValueText.text = clickvalue.ToString();
-        priceText.text = clickUpgradePrice.ToString();
+        goodText.text = $"Produkuj: {WarehouseManager.Instance.GetActiveGood()}";
+        clickValueText.text = $"{clickvalue}na klikniêcie";
+        priceText.text = $"{clickUpgradePrice:0.00}z³";
         dropdown.ClearOptions();
         List<TMP_Dropdown.OptionData> options = new List<TMP_Dropdown.OptionData>();
         foreach (Good good in GameData.Instance.goodsData.goods)
@@ -37,22 +37,22 @@ public class UpgradeWIndow : Window
     }
     public void UpdateText()
     {
-        goodText.text = WarehouseManager.Instance.GetActiveGood();
+        goodText.text = $"Produkuj: {WarehouseManager.Instance.GetActiveGood()}";
     }
 
     public void UpdateClickValue()
     {
         if (GameManager.Instance.Cash >= clickUpgradePrice)
         {  
-            clickValueText.text = WarehouseManager.Instance.GetActualClickValue().ToString();
+            clickValueText.text = $"{WarehouseManager.Instance.GetActualClickValue()} na klikniêcie";
             clickUpgradePrice *= 2;
-            priceText.text = clickUpgradePrice.ToString();
+            priceText.text = $"{clickUpgradePrice:0.00}z³";
 
         }
     }
     public void UpdateWarehousePrice()
     {
-        warehouseUpgradePrice.text = WarehouseManager.Instance.GetWarehouseUpgradePrice().ToString();
+        warehouseUpgradePrice.text = $"{WarehouseManager.Instance.GetWarehouseUpgradePrice():0.00}z³";
     }
 
 }
