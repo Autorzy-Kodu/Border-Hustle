@@ -12,21 +12,30 @@ public class Vehicle
 	public float exploatationCost;
 	public float durability;
 	public float speed;
+	[Range(0f, 1f)] public float susMeter;
 	public VehicleType type;
 	public Sprite thumbnail;
 	public GameObject prefab;
 	public float unloadTime;
 	public int capacity; // FIXME nie działa
 
-	public void GenerateRandom()
+	public static Vehicle GenerateRandom()
 	{
-		Vehicle vehicle = GameData.Instance.vehiclesData.vehicles[Random.Range(0, GameData.Instance.vehiclesData.vehicles.Count)];
-		vehicleName = vehicle.vehicleName;
-		thumbnail = vehicle.thumbnail;
-		price = vehicle.price;
-		durability = vehicle.durability;
-		speed = vehicle.speed;
-		unloadTime = vehicle.unloadTime;
-		prefab = vehicle.prefab;
+		Vehicle vehicle = new Vehicle();
+		Vehicle vehicleData = GameData.Instance.vehiclesData.vehicles[Random.Range(0, GameData.Instance.vehiclesData.vehicles.Count)];
+		// niezmienne
+		vehicle.vehicleName = vehicleData.vehicleName;
+		vehicle.thumbnail = vehicleData.thumbnail;
+		vehicle.prefab = vehicleData.prefab;
+		vehicle.unloadTime = vehicleData.unloadTime;
+		vehicle.type = vehicleData.type;
+		vehicle.capacity = vehicleData.capacity;
+		// losowe wariacje
+		vehicle.durability = Random.Range(0.25f, 1f);
+		float speedVariation = Random.Range(-0.5f, 0.5f);
+		vehicle.speed = vehicleData.speed + speedVariation;
+		
+		vehicle.price = vehicle.price * (1 - (vehicle.durability - 1) * (vehicle.durability - 1)) + speedVariation * 100f;
+		return vehicle;
 	}
 }

@@ -10,15 +10,37 @@ public class VehicleManager : MonoBehaviour
 
 	private void Awake()
 	{
-		GenerateContracts();
+		FailSafe();
+		GenerateVehicles();
 	}
 
-	public void GenerateContracts()
+	private void Start()
+	{
+		StartCoroutine(EAddNewVehicles());
+	}
+
+	public void FailSafe()
+	{
+		GameObject firstCarGO = Instantiate(newVehiclePrefab, transform.position, Quaternion.identity, transform);
+		AvailableVehicle availableVehicle = firstCarGO.GetComponent<AvailableVehicle>();
+		Vehicle firstVehicle = GameData.Instance.vehiclesData.vehicles[0];
+		availableVehicle.SetVehicle(firstVehicle);
+	}
+
+	public void GenerateVehicles()
 	{
 		while (transform.childCount < availableVehicles)
 		{
-			// TODO wygeneruj losowy pojazd
 			Instantiate(newVehiclePrefab, transform.position, Quaternion.identity, transform);
+		}
+	}
+
+	IEnumerator EAddNewVehicles()
+	{
+		while (true)
+		{
+			GenerateVehicles();
+			yield return new WaitForSeconds(60f);
 		}
 	}
 }
