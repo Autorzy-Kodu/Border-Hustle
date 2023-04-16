@@ -80,7 +80,7 @@ MonoBehaviour:
     susMeter: 0.033
     type: 2
     thumbnail: {fileID: 21300000, guid: 6e81cfd5af99c9f4eaa2312d72486b81, type: 3}
-    prefab: {fileID: 8607713267838836939, guid: 8181fdf8cad38f747b0975fc88f14e31,
+    prefab: {fileID: 2481752296020801593, guid: 64336907d2af9f14d8585224ec9693b9,
       type: 3}
     unloadTime: 30
     capacity: 25
@@ -92,7 +92,7 @@ MonoBehaviour:
     susMeter: 0.12
     type: 2
     thumbnail: {fileID: 21300000, guid: 6e81cfd5af99c9f4eaa2312d72486b81, type: 3}
-    prefab: {fileID: 8607713267838836939, guid: 8181fdf8cad38f747b0975fc88f14e31,
+    prefab: {fileID: 8038811483349666961, guid: 9af5d002b2965ba499f4879a5a7ead20,
       type: 3}
     unloadTime: 30
     capacity: 25
@@ -104,7 +104,7 @@ MonoBehaviour:
     susMeter: 0.15
     type: 2
     thumbnail: {fileID: 21300000, guid: 6e81cfd5af99c9f4eaa2312d72486b81, type: 3}
-    prefab: {fileID: 8607713267838836939, guid: 8181fdf8cad38f747b0975fc88f14e31,
+    prefab: {fileID: 8038811483349666961, guid: 9af5d002b2965ba499f4879a5a7ead20,
       type: 3}
     unloadTime: 30
     capacity: 25
