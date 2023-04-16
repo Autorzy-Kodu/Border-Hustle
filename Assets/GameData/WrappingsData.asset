@@ -13,12 +13,36 @@ MonoBehaviour:
   m_Name: WrappingsData
   m_EditorClassIdentifier: 
   wrappings:
+  - wrappingName: "Zwyk\u0142y woreczek"
+    susMeter: 0.5
+    price: 0.99
   - wrappingName: "Zawi\u0144 w koc"
-    susMeter: 0.1
-    price: 13.99
+    susMeter: 0.4
+    price: 13.49
   - wrappingName: Schowaj w oponach
     susMeter: 0.05
     price: 199.99
   - wrappingName: "Schowaj pod p\u0142aszczem"
     susMeter: 0.15
-    price: 0.49
+    price: 3
+  - wrappingName: Woreczek strunowy
+    susMeter: 0.25
+    price: 100
+  - wrappingName: Wzmocniony woreczek strunowy
+    susMeter: 0.1
+    price: 250
+  - wrappingName: "Pr\xF3\u017Cniowe opakowanie"
+    susMeter: 0
+    price: 39.99
+  - wrappingName: Wtopienie w plastik
+    susMeter: 0.3
+    price: 500
+  - wrappingName: Wtopienie w farbe
+    susMeter: 0.3
+    price: 600
+  - wrappingName: Woodoodporne opakowanie
+    susMeter: -0.25
+    price: 300
+  - wrappingName: Opakowanie ekskluzywnego przemytnika
+    susMeter: -0.4
+    price: 500

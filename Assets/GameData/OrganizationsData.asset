@@ -13,5 +13,27 @@ MonoBehaviour:
   m_Name: OrganizationsData
   m_EditorClassIdentifier: 
   organisationsList:
-  - organizationName: Wyznawcy Chleba
-    logo: {fileID: 21300000, guid: 005a87ac61266a94e844a069dd9130f0, type: 3}
+  - organizationName: 2137 Gang
+    logo: {fileID: 21300000, guid: 6dc2d672ae168b04c85de9dc9e4563ea, type: 3}
+  - organizationName: Red Gang
+    logo: {fileID: 21300000, guid: 3b56c48508df5aa49ae8e6e8c5dfdae3, type: 3}
+  - organizationName: Military Group
+    logo: {fileID: 21300000, guid: e0b05d929cc1e3f44b13c2c873df62dd, type: 3}
+  - organizationName: Low Riders
+    logo: {fileID: 21300000, guid: f5ec657d18c5f734db142f42e467187a, type: 3}
+  - organizationName: Fit Boyz
+    logo: {fileID: 21300000, guid: 057ed7022463a7b4aa6954f31752da6f, type: 3}
+  - organizationName: Anti-Ulani Gang
+    logo: {fileID: 21300000, guid: ae85f81721f86e341bc5d7932f5f22da, type: 3}
+  - organizationName: Wild Corporation
+    logo: {fileID: 21300000, guid: 6874c8240d7deae458e49a3c11f9ce86, type: 3}
+  - organizationName: Graybird Industries
+    logo: {fileID: 21300000, guid: c93dc54e72d764046a02d63b37b9d579, type: 3}
+  - organizationName: Sketchy Boyz
+    logo: {fileID: 21300000, guid: b5a1e42376fbe9f4e95f18e4884952e3, type: 3}
+  - organizationName: Water Gang
+    logo: {fileID: 21300000, guid: 5e1e50ce08a4c4b4f960fc04f54b9fc7, type: 3}
+  - organizationName: Sweet Industries
+    logo: {fileID: 21300000, guid: e337cc6cd0d9873468b2795c31d6e78e, type: 3}
+  - organizationName: Los Pollos Hermanos
+    logo: {fileID: 21300000, guid: bf3a55c0ba66bd4469e19f7ddabbc02e, type: 3}
