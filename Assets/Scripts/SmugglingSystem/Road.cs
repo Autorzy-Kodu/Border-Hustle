@@ -10,7 +10,20 @@ public class Road : MonoBehaviour
 	public Sprite sprite;
 	public VehicleType vehicleType;
 	[SerializeField] private List<Waypoint> waypoints;
-	
+
+	public float susMeter {
+		get
+		{
+			float susMeter = 0f;
+			foreach (Waypoint waypoint in waypoints)
+			{
+				if (waypoint is BorderCrossing)
+					susMeter += ((BorderCrossing)waypoint).baseFailPercentage;
+			}
+			return susMeter;
+		}
+	}
+
 	public void SmuggleUsingThisRoad(GameObject vehiclePrefab, IllegalTransport illegalTransport)
 	{
 		StartCoroutine(EDriving(vehiclePrefab, illegalTransport));
