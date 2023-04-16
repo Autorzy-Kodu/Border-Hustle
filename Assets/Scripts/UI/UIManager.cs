@@ -18,7 +18,14 @@ public class UIManager : Singleton<UIManager>
 	private Dictionary<Contract, GameObject> activeContractDictionary = new ();
 
 	[SerializeField] private bool gamePaused;
-	
+	private void Start()
+	{
+		SetSmugglerText();
+		SetCarText();
+		SetPlaneText();
+		SetBoatText();
+
+    }
 	public float Cash
 	{
 		set => cashText.text = $"{value:0.00}zł";

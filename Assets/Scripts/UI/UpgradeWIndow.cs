@@ -20,7 +20,7 @@ public class UpgradeWIndow : Window
     private void Start()
     {
         goodText.text = $"Produkuj: {WarehouseManager.Instance.GetActiveGood()}";
-        clickValueText.text = $"{clickvalue}na klikniêcie";
+        clickValueText.text = $"{clickvalue} na klikniêcie";
         priceText.text = $"{clickUpgradePrice:0.00}z³";
         warehouseUpgradePrice.text = $"{WarehouseManager.Instance.GetWarehouseUpgradePrice():0.00}z³";
         dropdown.ClearOptions();

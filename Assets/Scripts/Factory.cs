@@ -14,6 +14,8 @@ public class Factory : MonoBehaviour, IClickable
 	private Image icon;
     [SerializeField] 
     private Window windowToShow;
+    [SerializeField]
+    private Button buyButton;
 
     Vector3 textStartPosition;
     private string pickedGoodName;
@@ -123,6 +125,12 @@ public class Factory : MonoBehaviour, IClickable
     }
     public void RunAutoClicker()
     {
-        StartCoroutine(AutoClicker());
+        if(GameManager.Instance.Cash >= 2000)
+        {
+            buyButton.interactable = false;
+            GameManager.Instance.Cash -= 2000;
+            StartCoroutine(AutoClicker());
+        }
+
     }
 }
