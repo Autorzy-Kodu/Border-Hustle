@@ -19,10 +19,83 @@ MonoBehaviour:
   - "\u0141ukasz"
   - Tobiasz
   - Mariusz
+  - Aleksander
+  - Alojzy
+  - Bastian
+  - Brajanusz
+  - Cyprian
+  - Dariusz
+  - Dionizy
+  - Edward
+  - Edward
+  - Eustachy
+  - Florian
+  - Gniewomir
+  - Hektor
+  - Igor
+  - Jacek
+  - Jonasz
+  - Grzegorz
+  - Kazimierz
+  - Konstanty
+  - Ksawier
+  - Leszek
+  - Lucjan
+  - Marian
+  - "Mieczys\u0142aw"
+  - Norbert
+  - Oskar
+  - Patryk
+  - "Przemys\u0142aw"
+  - Roman
+  - Ryszard
+  - Stefan
+  - Szczepan
+  - Tobiasz
+  - "Wac\u0142aw"
+  - Witold
+  - Zbigniew
   smugglersLastNames:
   - "Bo\u017Cek"
   - Towarek
   - "B\u0105k"
+  - Jaworek
+  - Floryda
+  - Adamek
+  - "\u015Aciesi\u0144ski"
+  - "Bigosi\u0144ski"
+  - "Ba\u0142uch"
+  - Matwiejuk
+  - Bralewski
+  - Szczepara
+  - Oszczyk
+  - Gutek
+  - "Ry\u017C"
+  - Wierciak
+  - Meszka
+  - Jagusztyn
+  - Sujak
+  - Muszak
+  - "Wojty\u0142a"
+  - "Mak\u0142owicz"
+  - "Podko\u015Bcielny"
+  - Baniecki
+  - "Sza\u0142ach"
+  - Halczuk
+  - Plotnikov
+  - Kaszczyszyn
+  - Gromulski
+  - Sotek
+  - "Ry\u017Cak"
+  - Migowski
+  - Czerwiak
+  - Onisk
+  - Holona
+  - Ryduchowski
+  - Pokrzywka
+  - "Furczo\u0144"
+  - "\u0141acheta"
+  - "Tarczo\u0144"
   smugglersPortraits:
   - {fileID: 21300000, guid: e4c578a1915470c45852c75f5b45fb8f, type: 3}
   - {fileID: 21300000, guid: b9ac86eaaed00e04c85182afc3faaee6, type: 3}

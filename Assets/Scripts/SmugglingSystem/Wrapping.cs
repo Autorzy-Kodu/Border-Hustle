@@ -9,4 +9,5 @@ public class Wrapping
 	public string wrappingName;
 	public float susMeter;
 	public float price;
+	[Range(0f, 3f)] public float productsPriceMultiplier;
 }

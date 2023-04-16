@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vehicles:
   - vehicleName: Maluch
-    price: 1500
+    price: 500
     exploatationCost: 0
     durability: 1
     speed: 10

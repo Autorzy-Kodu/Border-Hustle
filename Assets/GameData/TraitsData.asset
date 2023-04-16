@@ -14,10 +14,92 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   traits:
   - traitName: Karany
-    rarity: 0.85
+    rarity: 0.06
     color: {r: 1, g: 0, b: 0, a: 1}
+    type: 2
     susMultiplier: 1.1
     costMultiplier: 1
     sellMultiplier: 1
     escapeMultiplier: 1
     speedMultiplier: 1
+  - traitName: "By\u0142y policjant"
+    rarity: 0.12
+    color: {r: 0, g: 1, b: 0.060156345, a: 1}
+    type: 1
+    susMultiplier: 0.9
+    costMultiplier: 1.5
+    sellMultiplier: 1
+    escapeMultiplier: 1
+    speedMultiplier: 1
+  - traitName: Dobry paszport
+    rarity: 0.19
+    color: {r: 0, g: 1, b: 0.060156345, a: 1}
+    type: 1
+    susMultiplier: 0.95
+    costMultiplier: 1
+    sellMultiplier: 1
+    escapeMultiplier: 1
+    speedMultiplier: 1
+  - traitName: Zaradny
+    rarity: 0.2
+    color: {r: 0, g: 1, b: 0.060156345, a: 1}
+    type: 1
+    susMultiplier: 1
+    costMultiplier: 1
+    sellMultiplier: 1
+    escapeMultiplier: 2
+    speedMultiplier: 1
+  - traitName: Rajdowiec
+    rarity: 0.3
+    color: {r: 0.92129517, g: 1, b: 0, a: 1}
+    type: 0
+    susMultiplier: 1.1
+    costMultiplier: 1
+    sellMultiplier: 1
+    escapeMultiplier: 1.1
+    speedMultiplier: 1.3
+  - traitName: Sprzedawca
+    rarity: 0.37
+    color: {r: 0, g: 1, b: 0.08972359, a: 1}
+    type: 1
+    susMultiplier: 1
+    costMultiplier: 1
+    sellMultiplier: 1.25
+    escapeMultiplier: 1
+    speedMultiplier: 1
+  - traitName: "Uzale\u017Cniony"
+    rarity: 0.27
+    color: {r: 1, g: 0, b: 0, a: 1}
+    type: 2
+    susMultiplier: 1.2
+    costMultiplier: 1
+    sellMultiplier: 0.9
+    escapeMultiplier: 1
+    speedMultiplier: 1
+  - traitName: Sprinter
+    rarity: 0.67
+    color: {r: 0, g: 1, b: 0.09019608, a: 1}
+    type: 1
+    susMultiplier: 1
+    costMultiplier: 1
+    sellMultiplier: 1
+    escapeMultiplier: 3
+    speedMultiplier: 1.1
+  - traitName: Komandos
+    rarity: 0.8
+    color: {r: 0, g: 1, b: 0.09019608, a: 1}
+    type: 1
+    susMultiplier: 0.75
+    costMultiplier: 1.5
+    sellMultiplier: 1
+    escapeMultiplier: 4
+    speedMultiplier: 1
+  - traitName: Perfekcjonista
+    rarity: 0.75
+    color: {r: 0.92156863, g: 1, b: 0, a: 1}
+    type: 0
+    susMultiplier: 0.66
+    costMultiplier: 1
+    sellMultiplier: 1
+    escapeMultiplier: 0
+    speedMultiplier: 0.75

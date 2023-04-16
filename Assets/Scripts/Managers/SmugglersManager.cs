@@ -13,12 +13,25 @@ public class SmugglersManager : MonoBehaviour
 		GenerateSmugglers();
 	}
 
+	private void Start()
+	{
+		StartCoroutine(EAddNewSmugglers());
+	}
+
 	public void GenerateSmugglers()
 	{
 		while (transform.childCount < availableSmugglers)
 		{
-			// TODO wygeneruj losowego przemytnika
 			Instantiate(newSmugglerPrefab, transform.position, Quaternion.identity, transform);
+		}
+	}
+	
+	IEnumerator EAddNewSmugglers()
+	{
+		while (true)
+		{
+			GenerateSmugglers();
+			yield return new WaitForSeconds(UnityEngine.Random.Range(45f, 60f));
 		}
 	}
 }

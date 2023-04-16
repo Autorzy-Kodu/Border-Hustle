@@ -16,33 +16,44 @@ MonoBehaviour:
   - wrappingName: "Zwyk\u0142y woreczek"
     susMeter: 0.5
     price: 0.99
+    productsPriceMultiplier: 1
   - wrappingName: "Zawi\u0144 w koc"
     susMeter: 0.4
     price: 13.49
+    productsPriceMultiplier: 1
   - wrappingName: Schowaj w oponach
     susMeter: 0.05
     price: 199.99
+    productsPriceMultiplier: 1
   - wrappingName: "Schowaj pod p\u0142aszczem"
     susMeter: 0.15
     price: 3
+    productsPriceMultiplier: 1
   - wrappingName: Woreczek strunowy
     susMeter: 0.25
     price: 100
+    productsPriceMultiplier: 1
   - wrappingName: Wzmocniony woreczek strunowy
     susMeter: 0.1
     price: 250
+    productsPriceMultiplier: 1
   - wrappingName: "Pr\xF3\u017Cniowe opakowanie"
     susMeter: 0
     price: 39.99
+    productsPriceMultiplier: 1
   - wrappingName: Wtopienie w plastik
     susMeter: 0.3
     price: 500
+    productsPriceMultiplier: 0.85
   - wrappingName: Wtopienie w farbe
     susMeter: 0.3
     price: 600
+    productsPriceMultiplier: 0.89
   - wrappingName: Woodoodporne opakowanie
     susMeter: -0.25
     price: 300
+    productsPriceMultiplier: 0.95
   - wrappingName: Opakowanie ekskluzywnego przemytnika
     susMeter: -0.4
     price: 500
+    productsPriceMultiplier: 1.05
