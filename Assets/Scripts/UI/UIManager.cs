@@ -8,7 +8,11 @@ using UnityEngine.UI;
 public class UIManager : Singleton<UIManager>
 {
 	[SerializeField] private TextMeshProUGUI cashText;
-	[SerializeField] private Slider heatSlider;
+    [SerializeField] private TextMeshProUGUI smugglerText;
+    [SerializeField] private TextMeshProUGUI carText;
+    [SerializeField] private TextMeshProUGUI boatText;
+    [SerializeField] private TextMeshProUGUI planeText;
+    [SerializeField] private Slider heatSlider;
 	[SerializeField] private Transform activeContractsParent;
 	[SerializeField] private GameObject activeContractPrefab;
 	private Dictionary<Contract, GameObject> activeContractDictionary = new ();
@@ -24,8 +28,48 @@ public class UIManager : Singleton<UIManager>
 	{
 		set => heatSlider.value = value;
 	}
+	public void SetSmugglerText()
+	{
+		smugglerText.text = $"{GameManager.Instance.hiredSmugglers.Count}/{GameManager.Instance.MaxSmugglersLimit}";
+	}
+    public void SetCarText()
+    {
+		int i = 0;
+		foreach(Vehicle vehicle in GameManager.Instance.vehicles)
+		{
+			if(vehicle.type== VehicleType.Ground)
+			{
+				i++;
+			}
+		}
+		carText.text = $"{i}/{GameManager.Instance.MaxVehiclesLimit}";
+    }
+    public void SetBoatText()
+    {
+        int i = 0;
+        foreach (Vehicle vehicle in GameManager.Instance.vehicles)
+        {
+            if (vehicle.type == VehicleType.Water)
+            {
+                i++;
+            }
+        }
+        boatText.text = $"{i}/{GameManager.Instance.MaxVehiclesLimit}";
+    }
+    public void SetPlaneText()
+    {
+        int i = 0;
+        foreach (Vehicle vehicle in GameManager.Instance.vehicles)
+        {
+            if (vehicle.type == VehicleType.Air)
+            {
+                i++;
+            }
+        }
+        planeText.text = $"{i}/{GameManager.Instance.MaxVehiclesLimit}";
+    }
 
-	public void AddActiveContract(Contract contract)
+    public void AddActiveContract(Contract contract)
 	{
 		GameObject newContract = Instantiate(activeContractPrefab, transform.position, Quaternion.identity, activeContractsParent);
 		activeContractDictionary.Add(contract, newContract);
