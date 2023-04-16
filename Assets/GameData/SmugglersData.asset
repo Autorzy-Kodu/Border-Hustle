@@ -97,8 +97,24 @@ MonoBehaviour:
   - "\u0141acheta"
   - "Tarczo\u0144"
   smugglersPortraits:
+  - {fileID: 21300000, guid: c02286ad3dfe0c84e9d019f4388653fc, type: 3}
+  - {fileID: 21300000, guid: b2de10fccc0461e4d8f7d7dc63f4ad15, type: 3}
+  - {fileID: 21300000, guid: 03aa8d297b2e44c4380568c4689fc0d4, type: 3}
+  - {fileID: 21300000, guid: 9ab64d9ca7ee4f3478caed24702ad262, type: 3}
+  - {fileID: 21300000, guid: b11ea01719aff1d4cba55d9e157e4a92, type: 3}
+  - {fileID: 21300000, guid: 3e02a6c299d7aaa41911a12b41f0bf99, type: 3}
+  - {fileID: 21300000, guid: bca8bff41c4e2364695e436409897926, type: 3}
+  - {fileID: 21300000, guid: 5341135bde3ae01449c157654b8fff1d, type: 3}
+  - {fileID: 21300000, guid: 55134d2789eca8d46a57df9f1f61fef0, type: 3}
+  - {fileID: 21300000, guid: 1a854078fea334d48ad7e37d9bcbd2dc, type: 3}
   - {fileID: 21300000, guid: e4c578a1915470c45852c75f5b45fb8f, type: 3}
   - {fileID: 21300000, guid: b9ac86eaaed00e04c85182afc3faaee6, type: 3}
+  - {fileID: 21300000, guid: 16cca699a59ce544586cae4d1f73f397, type: 3}
+  - {fileID: 21300000, guid: 18c961f8710602c47a318aa39e4b6c31, type: 3}
   - {fileID: 21300000, guid: 2bf6f31235b3cd04380df9242d80303d, type: 3}
   - {fileID: 21300000, guid: 7ae1a3e163dde444a890b25be36b7d43, type: 3}
   - {fileID: 21300000, guid: 88a0867519fd27e498299720987aef3e, type: 3}
+  - {fileID: 21300000, guid: e010251f8e3176348a36898dea164041, type: 3}
+  - {fileID: 21300000, guid: 806d70e1d4f7716429d8ed54cb0a5fda, type: 3}
+  - {fileID: 21300000, guid: 1c325114e4e68d94dbdb4a03dc9eba4f, type: 3}
+  - {fileID: 21300000, guid: 9aad0521d91a5b847ae45f9761b5d3b1, type: 3}
