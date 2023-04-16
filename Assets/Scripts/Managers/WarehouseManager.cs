@@ -10,7 +10,7 @@ public class WarehouseManager : Singleton<WarehouseManager>
     int warehouseCapacity=50;
     int warehouseUpgradePrice = 100;
     string activeGoodName;
-    int actualClickValue;
+    int actualClickValue=3;
     public void AddGoods(string good,int value)
     {
         if (!warehouse.ContainsKey(good))

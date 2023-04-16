@@ -65,6 +65,7 @@ public class GameManager : Singleton<GameManager>
 
 		Cash -= smuggler.hirePrice;
 		hiredSmugglers.Add(smuggler);
+		UIManager.Instance.SetSmugglerText();
 	}
 
 	public void BuyVehicle(Vehicle vehicle)
@@ -77,7 +78,10 @@ public class GameManager : Singleton<GameManager>
 
 		Cash -= vehicle.price;
 		vehicles.Add(vehicle);
-	}
+        UIManager.Instance.SetCarText();
+        UIManager.Instance.SetPlaneText();
+        UIManager.Instance.SetBoatText();
+    }
 
 	IEnumerator ECrewRest()
 	{

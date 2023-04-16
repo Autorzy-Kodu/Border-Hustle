@@ -21,7 +21,7 @@ public class Factory : MonoBehaviour, IClickable
 	private Color iconColor;
     List<string> goodName = new List<string>();
     int clickUpgradePrice = 10;
-    int clickvalue=3;
+    int clickvalue=5;
     private int actualClickvalue;
     private void Start()
 	{
@@ -105,5 +105,24 @@ public class Factory : MonoBehaviour, IClickable
             clickvalue++;
             WarehouseManager.Instance.SetActualClickValue(clickvalue);
         }
+    }
+    IEnumerator AutoClicker()
+    {
+        while (true) 
+        {
+            if (WarehouseManager.Instance.GetGoods().ContainsKey(pickedGoodName) && WarehouseManager.Instance.GetGoods()[pickedGoodName] >= WarehouseManager.Instance.GetWarehouseCapacity())
+            {
+
+            }
+            else
+            {
+                Click();
+            }
+            yield return new WaitForSeconds(5);
+        }
+    }
+    public void RunAutoClicker()
+    {
+        StartCoroutine(AutoClicker());
     }
 }
