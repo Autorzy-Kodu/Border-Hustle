@@ -27,8 +27,9 @@ public class GameManager : Singleton<GameManager>
 	public int MaxSmugglersLimit { get; set; }
 	public int MaxVehiclesLimit { get; set; }
 
-	protected void Start()
+	protected override void Awake()
 	{
+		base.Awake();
 		Cash = 2500;
 		MaxContractsLimit = 3;
 		MaxSmugglersLimit = 3;
