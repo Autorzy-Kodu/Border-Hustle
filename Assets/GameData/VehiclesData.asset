@@ -26,19 +26,19 @@ MonoBehaviour:
     unloadTime: 10
     capacity: 5
   - vehicleName: "Ko\u0144"
-    price: 100000
+    price: 10000
     exploatationCost: 0
     durability: 1
     speed: 20
     susMeter: 0.066
     type: 0
     thumbnail: {fileID: 21300000, guid: 6e81cfd5af99c9f4eaa2312d72486b81, type: 3}
-    prefab: {fileID: 7531660799974971724, guid: fcf4b7894170f324bbbd39f42de4ea29,
+    prefab: {fileID: 3367878344821545760, guid: e778f64a7900b2146b2c777fc497742d,
       type: 3}
     unloadTime: 30
     capacity: 35
   - vehicleName: "Ciem\u017Car\xF3wka"
-    price: 150000
+    price: 30000
     exploatationCost: 0
     durability: 1
     speed: 20
@@ -50,7 +50,7 @@ MonoBehaviour:
     unloadTime: 30
     capacity: 100
   - vehicleName: SUV
-    price: 500
+    price: 3000
     exploatationCost: 0
     durability: 1
     speed: 20
@@ -62,7 +62,7 @@ MonoBehaviour:
     unloadTime: 30
     capacity: 100
   - vehicleName: "K\u0142ad"
-    price: 500
+    price: 1500
     exploatationCost: 0
     durability: 1
     speed: 20
@@ -73,7 +73,7 @@ MonoBehaviour:
     unloadTime: 30
     capacity: 50
   - vehicleName: Kajak
-    price: 500
+    price: 1000
     exploatationCost: 0
     durability: 1
     speed: 20
@@ -85,7 +85,7 @@ MonoBehaviour:
     unloadTime: 30
     capacity: 25
   - vehicleName: "Motor\xF3wka"
-    price: 500
+    price: 3799
     exploatationCost: 0
     durability: 1
     speed: 20
@@ -97,7 +97,7 @@ MonoBehaviour:
     unloadTime: 30
     capacity: 25
   - vehicleName: Czarny ponton
-    price: 500
+    price: 6580
     exploatationCost: 0
     durability: 1
     speed: 20
@@ -109,7 +109,7 @@ MonoBehaviour:
     unloadTime: 30
     capacity: 25
   - vehicleName: Cessna 152
-    price: 500
+    price: 13000
     exploatationCost: 0
     durability: 1
     speed: 20
@@ -121,7 +121,7 @@ MonoBehaviour:
     unloadTime: 30
     capacity: 150
   - vehicleName: Piper
-    price: 500
+    price: 17000
     exploatationCost: 0
     durability: 1
     speed: 20
@@ -133,7 +133,7 @@ MonoBehaviour:
     unloadTime: 30
     capacity: 25
   - vehicleName: "Pasa\u017Cerski"
-    price: 500
+    price: 27000
     exploatationCost: 0
     durability: 1
     speed: 20

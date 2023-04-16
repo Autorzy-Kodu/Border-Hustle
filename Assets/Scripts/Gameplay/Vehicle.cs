@@ -35,7 +35,7 @@ public class Vehicle
 		float speedVariation = Random.Range(-0.5f, 0.5f);
 		vehicle.speed = vehicleData.speed + speedVariation;
 		
-		vehicle.price = vehicle.price * (1 - (vehicle.durability - 1) * (vehicle.durability - 1)) + speedVariation * 100f;
+		vehicle.price = vehicleData.price * (1 - (vehicle.durability - 1) * (vehicle.durability - 1)) + speedVariation * 100f;
 		return vehicle;
 	}
 }
