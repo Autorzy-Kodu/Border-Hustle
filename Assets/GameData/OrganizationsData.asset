@@ -14,26 +14,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   organisationsList:
   - organizationName: 2137 Gang
-    logo: {fileID: 21300000, guid: 6dc2d672ae168b04c85de9dc9e4563ea, type: 3}
+    logo: {fileID: 21300000, guid: 24a783b0943b3ab468b4edd5505e787f, type: 3}
   - organizationName: Red Gang
-    logo: {fileID: 21300000, guid: 3b56c48508df5aa49ae8e6e8c5dfdae3, type: 3}
+    logo: {fileID: 21300000, guid: d6b07b15bf67a6f40bea6b225a6a82c9, type: 3}
   - organizationName: Military Group
-    logo: {fileID: 21300000, guid: e0b05d929cc1e3f44b13c2c873df62dd, type: 3}
+    logo: {fileID: 21300000, guid: 24201ea18a78fd343a036ff2e75f3487, type: 3}
   - organizationName: Low Riders
-    logo: {fileID: 21300000, guid: f5ec657d18c5f734db142f42e467187a, type: 3}
+    logo: {fileID: 21300000, guid: 1b059fd26dd194146adfe5d047426e72, type: 3}
   - organizationName: Fit Boyz
-    logo: {fileID: 21300000, guid: 057ed7022463a7b4aa6954f31752da6f, type: 3}
+    logo: {fileID: 21300000, guid: 6d40c7b12d70f0347a5f4b1494850620, type: 3}
   - organizationName: Anti-Ulani Gang
-    logo: {fileID: 21300000, guid: ae85f81721f86e341bc5d7932f5f22da, type: 3}
+    logo: {fileID: 21300000, guid: bb14f28ad910a6d4b84ba609ee1923cc, type: 3}
   - organizationName: Wild Corporation
-    logo: {fileID: 21300000, guid: 6874c8240d7deae458e49a3c11f9ce86, type: 3}
+    logo: {fileID: 21300000, guid: c813c3e56decfb049a2342e85c9c650a, type: 3}
   - organizationName: Graybird Industries
-    logo: {fileID: 21300000, guid: c93dc54e72d764046a02d63b37b9d579, type: 3}
+    logo: {fileID: 21300000, guid: 94442b15fc20b7e42b6a854b616d4853, type: 3}
   - organizationName: Sketchy Boyz
-    logo: {fileID: 21300000, guid: b5a1e42376fbe9f4e95f18e4884952e3, type: 3}
+    logo: {fileID: 21300000, guid: 60e035dc984b18e42b279b2376d71546, type: 3}
   - organizationName: Water Gang
-    logo: {fileID: 21300000, guid: 5e1e50ce08a4c4b4f960fc04f54b9fc7, type: 3}
+    logo: {fileID: 21300000, guid: 635bacc14e4eaf041a9723070d24952f, type: 3}
   - organizationName: Sweet Industries
-    logo: {fileID: 21300000, guid: e337cc6cd0d9873468b2795c31d6e78e, type: 3}
+    logo: {fileID: 21300000, guid: b83f1fabfec77d04f8a11583b68f7891, type: 3}
   - organizationName: Los Pollos Hermanos
-    logo: {fileID: 21300000, guid: bf3a55c0ba66bd4469e19f7ddabbc02e, type: 3}
+    logo: {fileID: 21300000, guid: 1fc3b7ff3b852ee409b6e00aedc58306, type: 3}
+  - organizationName: Death Riders
+    logo: {fileID: 21300000, guid: f1067c4aef03e0c428d1531797441fff, type: 3}
+  - organizationName: Triangle Industries
+    logo: {fileID: 21300000, guid: 412eb1dc86110ec41b69203a4970278d, type: 3}
+  - organizationName: Diversity Squad
+    logo: {fileID: 21300000, guid: 7b69027402704f14fbbd53e332bba421, type: 3}
