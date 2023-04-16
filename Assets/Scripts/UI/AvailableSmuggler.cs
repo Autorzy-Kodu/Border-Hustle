@@ -8,30 +8,19 @@ using UnityEngine.UI;
 public class AvailableSmuggler : MonoBehaviour
 {
 	private Smuggler smuggler;
-	private SmugglersData smugglersData;
 
 	[SerializeField] private TextMeshProUGUI fullNameText;
 	[SerializeField] private Image portraitImage;
 	[SerializeField] private TextMeshProUGUI hirePriceText;
 	[SerializeField] private Transform smugglerTraitsParent;
 	[SerializeField] private GameObject smugglerTraitPrefab;
-
-	// TODO tylko debug
-	private void Start()
+	
+	private void Awake()
 	{
-		smugglersData = GameData.Instance.smugglersData;
-		smuggler = new Smuggler
-		{
-			fullName = smugglersData.GetRandomFullName(),
-			portrait = smugglersData.GetRandomPortrait(),
-			hirePrice = 100,
-			paymentPercent = 0.1f
-		};
+		smuggler = Smuggler.GenerateSmuggler();
 		fullNameText.text = smuggler.fullName;
 		portraitImage.sprite = smuggler.portrait;
-		hirePriceText.text = $"{smuggler.hirePrice}zł";
-
-		smuggler.traits.Add(GameData.Instance.traitsData.traits[0]);
+		hirePriceText.text = $"{smuggler.hirePrice:0.00}zł";
 
 		foreach (Trait trait in smuggler.traits)
 		{
@@ -41,14 +30,12 @@ public class AvailableSmuggler : MonoBehaviour
 		}
 	}
 
-	// TODO aktywowane przyciskami z zewnątrz
 	public void Hire()
 	{
 		GameManager.Instance.HireSmuggler(smuggler);
 		Destroy(gameObject);
 	}
 	
-	// TODO aktywowane przyciskami z zewnątrz
 	public void Reject()
 	{
 		Destroy(gameObject);

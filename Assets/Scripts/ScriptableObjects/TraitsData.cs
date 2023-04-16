@@ -5,4 +5,9 @@ using UnityEngine;
 public class TraitsData : ScriptableObject
 {
 	public List<Trait> traits;
+
+	public Trait GetRandomTrait()
+	{
+		return traits[Random.Range(0, traits.Count)];
+	}
 }

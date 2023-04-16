@@ -29,8 +29,7 @@ public class GameManager : Singleton<GameManager>
 
 	protected void Start()
 	{
-		base.Awake();
-		Cash = 100;
+		Cash = 2500;
 		MaxContractsLimit = 3;
 		MaxSmugglersLimit = 3;
 		MaxVehiclesLimit = 3;

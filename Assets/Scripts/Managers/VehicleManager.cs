@@ -40,7 +40,7 @@ public class VehicleManager : MonoBehaviour
 		while (true)
 		{
 			GenerateVehicles();
-			yield return new WaitForSeconds(60f);
+			yield return new WaitForSeconds(UnityEngine.Random.Range(45f, 60f));
 		}
 	}
 }
