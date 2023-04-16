@@ -216,6 +216,7 @@ public class DeliveryForm : Window
 		bool canSend = true;
 
 		float contractPayment = 0;
+
 		if (contractDropdown.value > 0)
 			contractPayment = GameManager.Instance.activeContracts[contractDropdown.value - 1].payment;
 		else
@@ -238,6 +239,14 @@ public class DeliveryForm : Window
 			wrappingPrice = GameData.Instance.wrappingsData.wrappings[wrappingDropdown.value - 1].price;
 		else
 			canSend = false;
+		if(vehicleDropdown.value>0 && roadDropdown.value > 0)
+		{
+            if (GameManager.Instance.vehicles[vehicleDropdown.value - 1].type != Map.Instance.roads[roadDropdown.value - 1].vehicleType)
+            {
+                canSend = false;
+            }
+        }
+
 
 		income += contractPayment;
 		cost -= smugglerPayment;

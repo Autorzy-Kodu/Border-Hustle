@@ -34,6 +34,7 @@ public class GameManager : Singleton<GameManager>
 		MaxSmugglersLimit = 3;
 		MaxVehiclesLimit = 3;
 		StartCoroutine(ECrewRest());
+		StartCoroutine(ERefreshContracts());
 	}
 
 	public void AddContract(Contract contract)
@@ -91,6 +92,18 @@ public class GameManager : Singleton<GameManager>
 				}
 			}
 			yield return new WaitForSeconds(10f);
+		}
+	}
+
+	IEnumerator ERefreshContracts()
+	{
+		while (true)
+		{
+			foreach (Contract contract in activeContracts)
+			{
+				UIManager.Instance.RefreshActiveContract(contract);
+			}
+			yield return new WaitForSeconds(1f);
 		}
 	}
 }

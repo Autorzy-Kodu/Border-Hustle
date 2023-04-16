@@ -49,6 +49,7 @@ public class WarehouseManager : Singleton<WarehouseManager>
     {
         if (GameManager.Instance.Cash >= warehouseUpgradePrice)
         {
+            GameManager.Instance.Cash-=warehouseUpgradePrice;
             warehouseCapacity += 20;
             warehouseUpgradePrice += 60;
         }

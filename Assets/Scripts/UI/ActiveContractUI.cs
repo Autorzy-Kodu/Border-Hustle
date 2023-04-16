@@ -22,5 +22,10 @@ public class ActiveContractUI : MonoBehaviour
 	public float Time
 	{
 		set => timeText.text = $"{value}";
+    }
+
+	public void cos()
+	{
+		
 	}
 }

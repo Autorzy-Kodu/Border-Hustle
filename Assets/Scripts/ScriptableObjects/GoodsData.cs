@@ -16,4 +16,9 @@ public class GoodsData : ScriptableObject
             goodsDictionary.Add(g.goodName, g);
         }
     }
+
+    public Good GetRandom()
+    {
+        return goods[Random.Range(0, goods.Count)];
+    }
 }

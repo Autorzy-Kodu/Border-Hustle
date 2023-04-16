@@ -32,7 +32,8 @@ public class UIManager : Singleton<UIManager>
 		ActiveContractUI activeContractUI = newContract.GetComponent<ActiveContractUI>();
 		activeContractUI.Description = contract.description;
 		Debug.Log(activeContractDictionary.Count);
-	}
+        RefreshActiveContract(contract);
+    }
 
 	public void RemoveActiveContract(Contract contract)
 	{
@@ -43,8 +44,23 @@ public class UIManager : Singleton<UIManager>
 
 	public void RefreshActiveContract(Contract contract)
 	{
+		activeContractDictionary[contract].GetComponent<ActiveContractUI>().Description = contract.description;
+		int i = 0;
+		foreach (KeyValuePair<string, IntPair> activeContract in contract.goods)
+		{
+			activeContractDictionary[contract].gameObject.transform.GetChild(i).GetComponent<Image>().sprite = GameData.Instance.goodsData.goodsDictionary[activeContract.Key].goodThumbnail;
+			int def = 0;
+			WarehouseManager.Instance.GetGoods().TryGetValue(activeContract.Key, out def);
+            activeContractDictionary[contract].gameObject.transform.GetChild(i+1).GetComponent<TextMeshProUGUI>().text = $"{activeContract.Value.item1}/{activeContract.Value.item2} ({def})";
+			i += 2;
+        }
+		while (i <= 5)
+		{
+			activeContractDictionary[contract].gameObject.transform.GetChild(i).gameObject.SetActive(false);
+			i++;
+        }
 
-	}
+        }
 
 	public void TogglePause()
 	{
