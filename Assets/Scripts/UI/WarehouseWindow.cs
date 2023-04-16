@@ -22,6 +22,6 @@ public class WarehouseWindow : Window
             goodUi[good.Key].transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = good.Value.ToString();
             goodUi[good.Key].transform.GetChild(2).GetComponent<Image>().sprite = GameData.Instance.goodsData.goodsDictionary[good.Key].goodThumbnail;
         }
-        pojemnosc.text = $"<font-weight=\"300\" >Pojemnosc:{WarehouseManager.Instance.GetWarehouseCapacity()}";
+        pojemnosc.text = $"<font-weight=\"300\" >Pojemnosc: {WarehouseManager.Instance.GetWarehouseCapacity()}";
     }
 }
