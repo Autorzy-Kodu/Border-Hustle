@@ -40,7 +40,9 @@ public class VehicleManager : MonoBehaviour
 		while (true)
 		{
 			GenerateVehicles();
-			yield return new WaitForSeconds(UnityEngine.Random.Range(45f, 60f));
+			Debug.Log("Generated new vehicles");
+			yield return new WaitForSeconds(UnityEngine.Random.Range(1f, 15f)); 
+			//FIXME: Coroutine works only while in Car Dealer window
 		}
 	}
 }
